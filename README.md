@@ -12,12 +12,13 @@ I am a Full stack Web Developer and Cross Platform Mobile Apps developer with nu
   <a href="https://github.com/adityaInnovates">
   <img height="170" src="https://github-readme-stats.vercel.app/api?username=AdityaInnovates&theme=blue-green&hide_border=false&include_all_commits=true&count_private=true"/>
    </a>
-&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  <a href="https://github.com/adityaInnovates">
    <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=AdityaInnovates&theme=blue-green&hide_border=false&include_all_commits=true&count_private=true&layout=compact"/>
  </a>
   &nbsp;&nbsp;&nbsp;&nbsp;
 </div>
+</br>
 <div align="center">
   <a href="https://github.com/adityaInnovates">
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=AdityaInnovates&theme=blue-green&hide_border=false"/>
