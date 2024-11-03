@@ -14,6 +14,8 @@ I am a Full stack Web Developer and Cross Platform Mobile Apps developer with nu
 <br/>
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=AdityaInnovates&theme=blue-green&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
 
+[![@adityainnovates's Holopin badges](https://holopin.me/adityainnovates)](https://holopin.io/@adityainnovates)
+
 ### ✍️
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=merko)
 
@@ -21,9 +23,6 @@ I am a Full stack Web Developer and Cross Platform Mobile Apps developer with nu
   [![BuyMeACoffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/itzaditya) 
 
   
-
-
-
 <!--
 
 Here are some ideas to get you started:
