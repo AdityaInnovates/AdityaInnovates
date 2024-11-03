@@ -15,7 +15,6 @@ I am a Full stack Web Developer and Cross Platform Mobile Apps developer with nu
    &nbsp;&nbsp;&nbsp;&nbsp;
  <a href="https://github.com/adityaInnovates">
    <img height="170" src="https://github-readme-streak-stats.herokuapp.com/?user=AdityaInnovates&theme=blue-green&hide_border=false"/>
-   &nbsp;&nbsp;&nbsp;&nbsp;
  </a>
 </div>
 <div align="center">
