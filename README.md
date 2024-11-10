@@ -24,6 +24,11 @@ I am a Full stack Web Developer and Cross Platform Mobile Apps developer with nu
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=AdityaInnovates&theme=blue-green&hide_border=false"/>
   </a>
 </div>
+<div align="center">
+  <a href="https://app.opensauced.pizza/u/AdityaInnovates/card">
+<img src="https://res.cloudinary.com/dua8n4vqz/image/upload/v1731275604/41303a53-b01e-4162-b351-9ca491b82a8f.png"/>
+  </a>
+</div>
 </br>
 
 [![@adityainnovates's Holopin badges](https://holopin.me/adityainnovates)](https://holopin.io/@adityainnovates)
