@@ -92,13 +92,11 @@ $ cat /var/log/hall_of_shadows
 
 ## `// telemetry`
 
-<img src="./assets/telemetry/overview.svg" width="100%" alt="contribution telemetry" />
+<img src="./assets/telemetry/year.svg" width="100%" alt="contributions in the last year" />
 
-<img src="./assets/telemetry/history.svg" width="100%" alt="contribution history" />
+<img src="./assets/telemetry/pulse.svg" width="100%" alt="all contributions since 2020 and a forecast for the rest of the year" />
 
-<img src="./assets/telemetry/forecast.svg" width="100%" alt="contribution forecast" />
-
-<sub>self-hosted · rebuilt every 6h by a GitHub Action · forecast is a back-tested statistical model, not a promise</sub>
+<sub>self-hosted · redrawn every 6h from the contribution calendar · the shaded area is a statistical forecast, not a promise</sub>
 
 <img src="./assets/divider.svg" width="100%" />
 
