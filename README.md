@@ -13,14 +13,14 @@
 
 ## `// void — a public shell`
 
-<a href="https://adityainnovates.github.io/AdityaInnovates/"><img src="./assets/keys/jackin.svg" alt="open the live terminal" /></a>
-<a href="https://adityainnovates.github.io/AdityaInnovates/?run=scan"><img src="./assets/keys/scan.svg" alt="scan yourself" /></a>
+<a href="https://adityainnovates.me/AdityaInnovates/"><img src="./assets/keys/jackin.svg" alt="open the live terminal" /></a>
+<a href="https://adityainnovates.me/AdityaInnovates/?run=scan"><img src="./assets/keys/scan.svg" alt="scan yourself" /></a>
 
 <sub>A real shell in your browser. <b>scan</b> shows everything your device gives away to every site you visit, and how to lock it down.<br>Runs 100% locally. Nothing you type or scan is sent anywhere.</sub>
 
 <br><br>
 
-<a href="https://adityainnovates.github.io/AdityaInnovates/"><img src="./assets/terminal.svg" width="100%" alt="live terminal" /></a>
+<a href="https://adityainnovates.me/AdityaInnovates/"><img src="./assets/terminal.svg" width="100%" alt="live terminal" /></a>
 
 <sub>↑ recent sessions from visitors. Or run a command right here on GitHub: press a key → submit the issue → a bot replies.</sub>
 
