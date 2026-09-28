@@ -78,7 +78,7 @@ def year():
         x, y = x0 + col * step, y0 + row * step
         glow = ' filter="url(#glow)"' if v >= glow_cut else ""
         cells.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{cs}" height="{cs}" rx="3" fill="{SEQ[min(lvl, 4)]}"{glow} '
-                     f'style="animation:pop .5s {0.012 * (col + row * 2):.2f}s both"><title>{v} on {d:%a %d %b %Y}</title></rect>')
+                     f'style="animation:pop .5s {0.012 * (col + row * 2):.2f}s backwards"><title>{v} on {d:%a %d %b %Y}</title></rect>')
         clip.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{cs}" height="{cs}" rx="3"/>')
         if d.day <= 7 and row == 0:
             months[col] = d.strftime("%b")
@@ -90,7 +90,7 @@ def year():
     stats = [(fmt(last_year_total), "contributions in the last year"), (f"{longest} days", "longest streak"), (str(best_day[1]), "best day")]
     for i, (v, lab) in enumerate(stats):
         x = x0 + i * 250
-        b.append(f'<g style="animation:fi .8s {0.1 + 0.15*i:.2f}s both"><text x="{x}" y="46" class="num">{v}</text>'
+        b.append(f'<g style="animation:fi .8s {0.1 + 0.15*i:.2f}s backwards"><text x="{x}" y="46" class="num">{v}</text>'
                  f'<text x="{x}" y="66" class="cap">{lab}</text></g>')
     for c, m in months.items():
         b.append(f'<text x="{x0 + c*step:.1f}" y="{y0-9}" class="s">{m}</text>')
@@ -208,12 +208,12 @@ def pulse():
     line = smooth(past)
     b = []
     b.append('<defs><linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">'
-             f'<stop offset="0" stop-color="{ACC}" stop-opacity=".24"/><stop offset="1" stop-color="{ACC}" stop-opacity=".03"/></linearGradient>'
+             f'<stop offset="0" stop-color="{ACC}" stop-opacity=".30"/><stop offset="1" stop-color="{ACC}" stop-opacity=".08"/></linearGradient>'
              '<linearGradient id="under" x1="0" y1="0" x2="0" y2="1">'
              f'<stop offset="0" stop-color="{ACC}" stop-opacity=".16"/><stop offset="1" stop-color="{ACC}" stop-opacity="0"/></linearGradient></defs>')
     b.append(f'<path d="{line} L{nx:.1f},{base} L{x0},{base} Z" fill="url(#under)"/>')
     b.append(f'<path id="p" d="{line}" fill="none" stroke="{ACC}" stroke-width="2.2" stroke-linejoin="round" filter="url(#glow)" '
-             f'pathLength="1" style="stroke-dasharray:1;stroke-dashoffset:1;animation:draw 3s ease-out forwards"/>')
+             f'pathLength="1" style="stroke-dasharray:1;animation:draw 3s ease-out"/>')
     # a spark that keeps running along the line
     b.append(f'<circle r="3" fill="{INK}" filter="url(#glow)" opacity=".9"><animateMotion dur="6s" begin="3s" repeatCount="indefinite">'
              f'<mpath href="#p"/></animateMotion></circle>')
@@ -221,10 +221,14 @@ def pulse():
     fut = [(nx, ny)] + [(X(n - 1 + h + 1), Y(v)) for h, v in enumerate(hi)]
     low = [(X(n - 1 + h + 1), Y(v)) for h, v in enumerate(lo)][::-1] + [(nx, ny)]
     cone = "M" + " L".join(f"{x:.1f},{y:.1f}" for x, y in fut + low) + "Z"
-    b.append(f'<path d="{cone}" fill="url(#fade)" style="animation:fi 1.2s 2.8s both"/>')
+    b.append(f'<path d="{cone}" fill="url(#fade)" style="animation:late 4s ease-out"/>')
     mline = smooth([(nx, ny)] + [(X(n - 1 + h + 1), Y(v)) for h, v in enumerate(med)])
-    b.append(f'<path d="{mline}" fill="none" stroke="{ACC}" stroke-opacity=".55" stroke-width="1.6" stroke-dasharray="2 5" '
-             f'stroke-linecap="round" style="animation:fi 1.2s 3s both"/>')
+    b.append(f'<path d="{mline}" fill="none" stroke="{ACC}" stroke-opacity=".9" stroke-width="2" stroke-dasharray="3 5" '
+             f'stroke-linecap="round" style="animation:late 4.2s ease-out"/>')
+    mx, my = X(n - 1 + SHOW), Y(med[-1])
+    b.append(f'<line x1="{nx:.1f}" y1="{base}" x2="{nx:.1f}" y2="{Y(hi[-1]) - 6:.1f}" stroke="{INK}" stroke-opacity=".25" stroke-dasharray="2 4"/>'
+             f'<text x="{nx + 10:.1f}" y="{Y(hi[-1]) + 6:.1f}" class="s" fill="{INK}" style="animation:late 4.2s ease-out">forecast</text>'
+             f'<text x="{mx:.1f}" y="{my - 10:.1f}" class="s" fill="{INK}" text-anchor="end" style="animation:late 4.4s ease-out">~{med[-1]:.0f}/wk</text>')
     b.append(f'<circle cx="{nx:.1f}" cy="{ny:.1f}" r="4.5" fill="{INK}" filter="url(#glow)" style="animation:beat 1.6s 3s infinite"/>'
              f'<text x="{nx:.1f}" y="{base+20}" class="s" text-anchor="middle" fill="{INK}">now</text>'
              f'<text x="{x1}" y="{base+20}" class="s" text-anchor="end">+12 wk</text>')
@@ -236,12 +240,13 @@ def pulse():
             b.append(f'<text x="{X(i):.1f}" y="{base+20}" class="s">{d.year}</text>')
     b.append(f'<line x1="{x0}" y1="{base}" x2="{x1}" y2="{base}" stroke="{ACC}" stroke-opacity=".12"/>')
     # headline, one sentence each side
-    b.append(f'<g style="animation:fi .8s .2s both"><text x="{x0}" y="46" class="big">{fmt(total)}</text>'
+    b.append(f'<g><text x="{x0}" y="46" class="big">{fmt(total)}</text>'
              f'<text x="{x0}" y="66" class="lab">contributions since {first_active.year}</text></g>')
-    b.append(f'<g style="animation:fi .8s 3.2s both"><text x="{x1}" y="46" class="big" text-anchor="end">~{fmt(q(ye, .5))}</text>'
-             f'<text x="{x1}" y="66" class="lab" text-anchor="end">expected by the end of {today.year} · {p_beat:.0f}% chance of beating {today.year-1}</text></g>')
-    b.append(f'<text x="{x1}" y="{H-10}" class="s" text-anchor="end" fill-opacity=".7">fog = 80% range of 3,000 simulated futures</text>')
-    css = ("@keyframes draw{to{stroke-dashoffset:0}}"
+    b.append(f'<g style="animation:late 4.4s ease-out"><text x="{x1}" y="46" class="big" text-anchor="end">~{fmt(q(ye, .5))}</text>'
+             f'<text x="{x1}" y="66" class="lab" text-anchor="end">forecast for {today.year} · {p_beat:.0f}% chance of beating {today.year-1}</text></g>')
+    b.append(f'<text x="{x1}" y="{H-10}" class="s" text-anchor="end" fill-opacity=".7">shaded = 80% range of 3,000 simulated futures</text>')
+    css = ("@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}"
+           "@keyframes late{0%,70%{opacity:0}100%{opacity:1}}"
            "@keyframes beat{0%,100%{r:4.5;opacity:1}15%{r:7;opacity:.6}30%{r:4.5;opacity:1}}")
     return svg(W, H, f"{total} contributions since {first_active.year}", "\n".join(b), css), q(ye, .5), p_beat
 
