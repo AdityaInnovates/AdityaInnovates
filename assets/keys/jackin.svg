@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="375" height="56" viewBox="0 0 375 56">
+<style>text{font:800 15px ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;letter-spacing:1px}.k{animation:g 1.8s ease-in-out infinite}@keyframes g{50%{stroke-opacity:.3;fill:#0b1f10}}
+.a{animation:a 1s steps(1) infinite}@keyframes a{50%{opacity:0}}</style>
+<rect x="2" y="7" width="371" height="46" rx="9" fill="#020403"/>
+<rect class="k" x="2" y="2" width="371" height="46" rx="9" fill="#07140b" stroke="#00ff41" stroke-width="2"/>
+<text x="187.5" y="31" text-anchor="middle" fill="#00ff41">▶  JACK IN — open the live terminal<tspan class="a"> █</tspan></text></svg>

@@ -13,12 +13,16 @@
 
 ## `// void — a public shell`
 
-<sub>This terminal is <b>live</b>. Press a key → submit the issue → a bot runs your command,<br>
-replies to you, and your anonymised session appears below. Your username is never shown.</sub>
+<a href="https://adityainnovates.github.io/AdityaInnovates/"><img src="./assets/keys/jackin.svg" alt="open the live terminal" /></a>
+<a href="https://adityainnovates.github.io/AdityaInnovates/?run=scan"><img src="./assets/keys/scan.svg" alt="scan yourself" /></a>
+
+<sub>A real shell in your browser. <b>scan</b> shows everything your device gives away to every site you visit, and how to lock it down.<br>Runs 100% locally. Nothing you type or scan is sent anywhere.</sub>
 
 <br><br>
 
-<img src="./assets/terminal.svg" width="100%" alt="live terminal" />
+<a href="https://adityainnovates.github.io/AdityaInnovates/"><img src="./assets/terminal.svg" width="100%" alt="live terminal" /></a>
+
+<sub>↑ recent sessions from visitors. Or run a command right here on GitHub: press a key → submit the issue → a bot replies.</sub>
 
 <a href="https://github.com/AdityaInnovates/AdityaInnovates/issues/new?title=term%3A%20help&body=Just%20press%20%2A%2ASubmit%20new%20issue%2A%2A.%20Keep%20the%20%60term%3A%60%20prefix%20in%20the%20title.%0A%0AA%20bot%20runs%20your%20command%2C%20replies%20here%2C%20and%20puts%20your%20anonymised%20session%20on%20the%20profile."><img src="./assets/keys/help.svg" alt="help" /></a> <a href="https://github.com/AdityaInnovates/AdityaInnovates/issues/new?title=term%3A%20whoami&body=Just%20press%20%2A%2ASubmit%20new%20issue%2A%2A.%20Keep%20the%20%60term%3A%60%20prefix%20in%20the%20title.%0A%0AA%20bot%20runs%20your%20command%2C%20replies%20here%2C%20and%20puts%20your%20anonymised%20session%20on%20the%20profile."><img src="./assets/keys/whoami.svg" alt="whoami" /></a> <a href="https://github.com/AdityaInnovates/AdityaInnovates/issues/new?title=term%3A%20ls&body=Just%20press%20%2A%2ASubmit%20new%20issue%2A%2A.%20Keep%20the%20%60term%3A%60%20prefix%20in%20the%20title.%0A%0AA%20bot%20runs%20your%20command%2C%20replies%20here%2C%20and%20puts%20your%20anonymised%20session%20on%20the%20profile."><img src="./assets/keys/ls.svg" alt="ls" /></a> <a href="https://github.com/AdityaInnovates/AdityaInnovates/issues/new?title=term%3A%20nmap&body=Just%20press%20%2A%2ASubmit%20new%20issue%2A%2A.%20Keep%20the%20%60term%3A%60%20prefix%20in%20the%20title.%0A%0AA%20bot%20runs%20your%20command%2C%20replies%20here%2C%20and%20puts%20your%20anonymised%20session%20on%20the%20profile."><img src="./assets/keys/nmap.svg" alt="nmap" /></a> <a href="https://github.com/AdityaInnovates/AdityaInnovates/issues/new?title=term%3A%20fortune&body=Just%20press%20%2A%2ASubmit%20new%20issue%2A%2A.%20Keep%20the%20%60term%3A%60%20prefix%20in%20the%20title.%0A%0AA%20bot%20runs%20your%20command%2C%20replies%20here%2C%20and%20puts%20your%20anonymised%20session%20on%20the%20profile."><img src="./assets/keys/fortune.svg" alt="fortune" /></a>
 

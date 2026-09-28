@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="483" height="56" viewBox="0 0 483 56">
+<style>text{font:800 15px ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;letter-spacing:1px}.k{animation:g 1.8s ease-in-out infinite;animation-delay:.9s}@keyframes g{50%{stroke-opacity:.3;fill:#1f0710}}
+.s{animation:s 2.2s linear infinite}@keyframes s{from{transform:translateX(0)}to{transform:translateX(483px)}}</style>
+<clipPath id="c"><rect x="2" y="2" width="479" height="46" rx="9"/></clipPath>
+<rect x="2" y="7" width="479" height="46" rx="9" fill="#020403"/>
+<rect class="k" x="2" y="2" width="479" height="46" rx="9" fill="#14070b" stroke="#ff0055" stroke-width="2"/>
+<g clip-path="url(#c)"><rect class="s" x="-40" y="2" width="30" height="46" fill="#ff0055" fill-opacity=".12"/></g>
+<text x="241.5" y="31" text-anchor="middle" fill="#ff0055">◉  SCAN YOURSELF — what does your browser leak?</text></svg>

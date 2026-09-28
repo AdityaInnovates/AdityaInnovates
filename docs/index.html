@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>void // 0xAditya</title>
+<meta name="description" content="a public shell. you are no one here.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050807; --fg:#c9d1d9; --dim:#6e7d72; --acc:#00ff41; --red:#ff0055; --cyan:#00e5ff; --hi:#e6ffe9;
+  --glow:0 0 6px rgba(0,255,65,.55);
+}
+body.red  {--acc:#ff0055; --glow:0 0 6px rgba(255,0,85,.55)}
+body.amber{--acc:#ffb000; --glow:0 0 6px rgba(255,176,0,.55)}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font:14px/1.55 'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;overflow:hidden}
+canvas#rain{position:fixed;inset:0;z-index:0;opacity:.16}
+.crt{pointer-events:none;position:fixed;inset:0;z-index:5;
+  background:repeating-linear-gradient(0deg,rgba(0,0,0,.28) 0 1px,transparent 1px 3px);}
+.vig{pointer-events:none;position:fixed;inset:0;z-index:6;background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.85) 100%)}
+.flick{animation:flick 6s infinite}
+@keyframes flick{0%,97%,100%{opacity:1}97.5%{opacity:.82}98.5%{opacity:.95}}
+
+.wrap{position:relative;z-index:2;height:100%;display:grid;grid-template-columns:1fr 300px;gap:18px;padding:18px;max-width:1280px;margin:0 auto}
+
+.term{background:rgba(5,8,7,.88);border:1px solid color-mix(in srgb,var(--acc) 30%,transparent);border-radius:10px;display:flex;flex-direction:column;min-height:0;box-shadow:0 0 40px rgba(0,0,0,.6)}
+.bar{display:flex;align-items:center;gap:8px;padding:9px 12px;border-bottom:1px solid color-mix(in srgb,var(--acc) 15%,transparent);font-size:11px;color:var(--dim)}
+.dot{width:9px;height:9px;border-radius:50%}
+.bar .t{flex:1;text-align:center}
+.live{color:var(--red);display:flex;align-items:center;gap:6px}
+.live i{width:7px;height:7px;border-radius:50%;background:var(--red);animation:pulse 1.4s infinite}
+@keyframes pulse{50%{opacity:.2}}
+#out{flex:1;overflow-y:auto;padding:14px 16px 4px;white-space:pre-wrap;word-break:break-word;cursor:text}
+#out::-webkit-scrollbar{width:6px}#out::-webkit-scrollbar-thumb{background:color-mix(in srgb,var(--acc) 30%,transparent);border-radius:3px}
+.ln{min-height:1.55em}
+.p-user{color:var(--acc);text-shadow:var(--glow)} .p-path{color:var(--cyan)} .p-sym{color:var(--dim)}
+.acc{color:var(--acc);text-shadow:var(--glow)} .dim{color:var(--dim)} .red{color:var(--red)} .hi{color:var(--hi)} .cy{color:var(--cyan)}
+a{color:var(--cyan)} a:hover{color:var(--hi)}
+#cur{display:inline-block;width:.6em;background:var(--acc);box-shadow:var(--glow);animation:blink 1s steps(1) infinite;margin-left:1px}
+@keyframes blink{50%{opacity:0}}
+#in{position:absolute;opacity:0;left:-9999px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px;border-top:1px solid color-mix(in srgb,var(--acc) 15%,transparent)}
+.chips button{font:inherit;font-size:12px;background:#07100a;color:var(--acc);border:1px solid color-mix(in srgb,var(--acc) 45%,transparent);border-radius:6px;padding:4px 10px;cursor:pointer}
+.chips button:hover{background:color-mix(in srgb,var(--acc) 15%,#07100a);box-shadow:var(--glow)}
+
+.side{display:flex;flex-direction:column;gap:14px;min-height:0}
+.card{background:rgba(5,8,7,.88);border:1px solid color-mix(in srgb,var(--acc) 25%,transparent);border-radius:10px;padding:14px}
+.card h3{margin:0 0 8px;font-size:11px;letter-spacing:2px;color:var(--dim);font-weight:400}
+.op svg{width:100%;height:auto;display:block}
+.eyes{animation:bl 5s infinite;transform-origin:150px 118px}
+@keyframes bl{0%,46%,50%,100%{transform:scaleY(1)}48%{transform:scaleY(.06)}}
+.hall{font-size:12px;white-space:pre;overflow:hidden}
+.glitch{position:relative;font-weight:800;font-size:22px;letter-spacing:3px;color:var(--hi)}
+.glitch::before,.glitch::after{content:attr(data-t);position:absolute;left:0;top:0}
+.glitch::before{color:var(--red);transform:translate(-2px,0);mix-blend-mode:screen;animation:g1 3.5s steps(1) infinite}
+.glitch::after{color:var(--cyan);transform:translate(2px,0);mix-blend-mode:screen;animation:g2 3.5s steps(1) infinite}
+@keyframes g1{0%,90%,100%{transform:translate(-2px,0)}92%{transform:translate(-7px,1px)}94%{transform:translate(4px,-1px)}}
+@keyframes g2{0%,90%,100%{transform:translate(2px,0)}92%{transform:translate(7px,-1px)}94%{transform:translate(-4px,1px)}}
+@media (max-width:900px){.wrap{grid-template-columns:1fr;padding:10px}.side{display:none}}
+body.shake .term{animation:shake .4s}
+@keyframes shake{20%{transform:translate(-4px,2px)}40%{transform:translate(4px,-2px)}60%{transform:translate(-3px,-1px)}80%{transform:translate(2px,1px)}}
+</style>
+</head>
+<body class="flick">
+<canvas id="rain"></canvas>
+<div class="crt"></div><div class="vig"></div>
+
+<div class="wrap">
+  <section class="term" id="term">
+    <div class="bar">
+      <span class="dot" style="background:#ff0055"></span><span class="dot" style="background:#ffb000"></span><span class="dot" style="background:#00ff41"></span>
+      <span class="t">tty0 — void — public shell</span>
+      <span class="live"><i></i>LIVE</span>
+    </div>
+    <div id="out" aria-live="polite"></div>
+    <div class="chips" id="chips"></div>
+    <input id="in" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="terminal input">
+  </section>
+
+  <aside class="side">
+    <div class="card op">
+      <div class="glitch" data-t="0xADITYA">0xADITYA</div>
+      <svg viewBox="0 0 300 250" aria-hidden="true">
+        <defs>
+          <linearGradient id="hd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f1a12"/><stop offset="1" stop-color="#030604"/></linearGradient>
+          <filter id="bl"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <path d="M150 10 C 92 12 62 60 60 116 C 58 160 46 200 24 232 L 24 250 L 276 250 L 276 232 C 254 200 242 160 240 116 C 238 60 208 12 150 10Z" fill="url(#hd)" stroke="currentColor" style="color:var(--acc)" stroke-opacity=".4"/>
+        <path d="M150 50 C 114 52 96 84 96 120 C 96 154 120 176 150 176 C 180 176 204 154 204 120 C 204 84 186 52 150 50Z" fill="#000"/>
+        <path d="M98 116 C 98 80 120 56 150 54 C 180 56 202 80 202 116 L 194 94 L 186 112 L 175 86 L 165 108 L 153 80 L 142 106 L 130 84 L 120 110 L 110 90 L 102 112Z" fill="#0c140e" stroke="currentColor" style="color:var(--acc)" stroke-opacity=".35"/>
+        <g class="eyes" filter="url(#bl)" style="color:var(--acc)">
+          <path d="M112 118 L 140 116 L 136 124 L 116 124Z" fill="currentColor"/>
+          <path d="M188 118 L 160 116 L 164 124 L 184 124Z" fill="currentColor"/>
+        </g>
+        <text x="150" y="232" text-anchor="middle" fill="currentColor" style="color:var(--dim);font:11px 'JetBrains Mono',monospace">UID 0 // 名無し</text>
+      </svg>
+    </div>
+    <div class="card"><h3>// HALL OF SHADOWS</h3><div class="hall" id="hall">loading…</div></div>
+    <div class="card"><h3>// YOUR SESSION</h3><div class="hall" id="me"></div></div>
+  </aside>
+</div>
+
+<script>
+(() => {
+/* ============================================================ config */
+const REPO = "AdityaInnovates/AdityaInnovates";
+const FLAG_SHA = "8dc7be45456324453bff74c4b7eeee4deb283815c5eacc4bb728a257300b6842";
+const INTERCEPTED = "NzM3OTZlNzQ3YjY1MzE2MTc0NWYzMDVmMzE2NjVmNmE3NTMzNjUzMzVmMzE1Zjc5MzE2OTMzN2Q=";
+const STATE_URL = `https://raw.githubusercontent.com/${REPO}/main/.github/terminal/state.json`;
+const LINKS = {
+  github: `https://github.com/${REPO.split("/")[0]}`,
+  linkedin: "https://www.linkedin.com/in/adityaInnovates/",
+  instagram: "https://www.instagram.com/aditya_innovates",
+  holopin: "https://holopin.io/@adityainnovates",
+  coffee: "https://www.buymeacoffee.com/itzaditya",
+};
+
+/* ============================================================ storage (best effort) */
+const store = {
+  get(k, d) { try { const v = localStorage.getItem("void:" + k); return v === null ? d : JSON.parse(v); } catch { return d; } },
+  set(k, v) { try { localStorage.setItem("void:" + k, JSON.stringify(v)); } catch {} },
+};
+let ghost = store.get("ghost", null);
+if (!ghost) { ghost = "ghost_" + [...crypto.getRandomValues(new Uint8Array(2))].map(b => b.toString(16).padStart(2, "0")).join(""); store.set("ghost", ghost); }
+let solved = store.get("solved", false);
+let theme = store.get("theme", "green");
+const visits = store.get("visits", 0) + 1; store.set("visits", visits);
+document.body.classList.toggle("red", theme === "red");
+document.body.classList.toggle("amber", theme === "amber");
+
+/* ============================================================ helpers */
+const $out = document.getElementById("out"), $in = document.getElementById("in");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const sha256 = async s => [...new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s)))].map(b => b.toString(16).padStart(2, "0")).join("");
+const rot13 = s => s.replace(/[a-z]/gi, c => String.fromCharCode((c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26));
+const scroll = () => { $out.scrollTop = $out.scrollHeight; };
+function line(html = "", cls = "") { const d = document.createElement("div"); d.className = "ln " + cls; d.innerHTML = html; $out.insertBefore(d, promptEl); scroll(); return d; }
+async function type(html, speed = 12, cls = "") {
+  const d = line("", cls); // type plain text char by char, then swap in html
+  const plain = html.replace(/<[^>]+>/g, "").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
+  for (let i = 0; i < plain.length; i += 2) { d.textContent = plain.slice(0, i + 2); scroll(); await sleep(speed); }
+  d.innerHTML = html; return d;
+}
+const P = () => `<span class="p-user">${ghost}@void</span><span class="p-sym">:</span><span class="p-path">~</span><span class="p-sym">$ </span>`;
+
+/* ============================================================ prompt line */
+const promptEl = document.createElement("div"); promptEl.className = "ln";
+const promptTxt = document.createElement("span"); const cur = document.createElement("span"); cur.id = "cur"; cur.textContent = " ";
+$out.appendChild(promptEl);
+function renderPrompt() { promptEl.innerHTML = P(); promptTxt.textContent = $in.value; promptEl.append(promptTxt, cur); scroll(); }
+let busy = true;
+
+/* ============================================================ filesystem */
+const FILES = {
+  "about.txt": () => [
+    `<span class="hi">0xAditya</span> — systems · security · full-stack`,
+    ``,
+    `I take things apart until they make sense: binaries, protocols, kernels.`,
+    `Reverse engineering, memory corruption, exploit mitigations, and the`,
+    `unglamorous work of shipping secure web & mobile products that real`,
+    `people use.`,
+    ``,
+    `<span class="dim">"if it runs, it can be understood. if it can be understood, it can be broken."</span>`,
+  ],
+  "arsenal.txt": () => [
+    `<span class="acc">low-level</span>  C  C++  Rust  x86_64/ARM asm  Python  Go  Bash`,
+    `<span class="acc">reversing</span>  Ghidra  GDB+pwndbg  radare2  QEMU  LLVM`,
+    `<span class="acc">offense  </span>  Burp Suite  Wireshark  Nmap  Kali`,
+    `<span class="acc">infra    </span>  Linux  Docker  Nginx  Cloudflare  AWS`,
+    `<span class="dim">cover    </span>  TypeScript  Node  React  Next.js  React Native  FastAPI  MongoDB`,
+  ],
+  "intercepted.bin": () => [INTERCEPTED, ``, `<span class="dim">three layers. peel them. tools on this box: base64, unhex, rot13. stuck? hint 1</span>`],
+  "contacts.txt": () => Object.entries(LINKS).map(([k, v]) => `<span class="acc">${k.padEnd(10)}</span><a href="${v}" target="_blank" rel="noopener">${v}</a>`),
+  ".secret": () => solved
+    ? [`<span class="acc">access granted.</span>`, ``, `most people scroll past. you didn't.`, `open a channel (see <span class="hi">contacts.txt</span>) and say the word <span class="acc">ring0</span>.`]
+    : null,
+};
+
+/* ============================================================ commands */
+const HELP = [
+  ["scan", "see what your browser leaks + how to fix it"], ["help", "this list"], ["whoami", "who you are here"], ["ls [-a]", "list files"], ["cat &lt;file&gt;", "read a file"],
+  ["neofetch", "system info"], ["nmap", "scan the host"], ["ping", "are you there?"], ["fortune", "wisdom, allegedly"],
+  ["base64 -d &lt;s&gt;", "decode base64"], ["unhex &lt;s&gt;", "hex → text"], ["rot13 &lt;s&gt;", "caesar's favourite"],
+  ["hint &lt;1-3&gt;", "for the intercepted.bin"], ["decrypt &lt;flag&gt;", "verify locally, never sent anywhere"],
+  ["hall", "who has cracked it"], ["theme &lt;green|red|amber&gt;", "change phosphor"], ["matrix", "..."],
+  ["history", "your commands"], ["clear", "clear screen"], ["sudo", "go on, try it"],
+];
+const FORTUNES = [
+  "the only secure computer is one that's off. and even then.",
+  "every abstraction leaks. find where.",
+  "trust the hardware? the hardware has firmware.",
+  "undefined behaviour is where the fun lives.",
+  "anonymity is not hiding. it is choosing what to show.",
+  "read the source. then read the assembly. then doubt both.",
+  "there is no cloud. just someone else's ring 0.",
+];
+let hist = store.get("hist", []), hi = hist.length;
+
+/* ============================================================ recon: what any site can see about you (100% local) */
+const B = (() => {
+  const ua = navigator.userAgent;
+  const brave = !!navigator.brave;
+  const firefox = /Firefox\//.test(ua);
+  const edge = /Edg\//.test(ua);
+  const chrome = /Chrome\//.test(ua) && !edge && !brave;
+  const safari = /Safari\//.test(ua) && !/Chrome|Chromium|Edg\//.test(ua);
+  const name = brave ? "Brave" : edge ? "Edge" : firefox ? "Firefox" : chrome ? "Chrome" : safari ? "Safari" : "your browser";
+  const os = /iPhone|iPad/.test(ua) ? "iOS" : /Android/.test(ua) ? "Android" : /Mac OS X/.test(ua) ? "macOS" : /Windows/.test(ua) ? "Windows" : /Linux/.test(ua) ? "Linux" : "unknown OS";
+  return { ua, brave, firefox, chrome, safari, edge, name, os, mobile: /Mobi|Android|iPhone/.test(ua) };
+})();
+const TZ = (() => { try { return Intl.DateTimeFormat().resolvedOptions().timeZone || "?"; } catch { return "?"; } })();
+
+function canvasFP() {
+  try {
+    const c = document.createElement("canvas"); c.width = 280; c.height = 60; const x = c.getContext("2d");
+    x.textBaseline = "top"; x.font = "16px 'Arial'"; x.fillStyle = "#f60"; x.fillRect(100, 1, 62, 20);
+    x.fillStyle = "#069"; x.fillText("void ✦ 名無し 0x41 😶", 2, 15); x.fillStyle = "rgba(102,204,0,.7)"; x.fillText("void ✦ 名無し 0x41 😶", 4, 17);
+    x.globalCompositeOperation = "multiply"; x.fillStyle = "#f0f"; x.beginPath(); x.arc(50, 50, 50, 0, Math.PI * 2); x.fill();
+    return c.toDataURL();
+  } catch { return ""; }
+}
+function webgl() {
+  try {
+    const gl = document.createElement("canvas").getContext("webgl"); if (!gl) return null;
+    const ext = gl.getExtension("WEBGL_debug_renderer_info");
+    return { vendor: ext ? gl.getParameter(ext.UNMASKED_VENDOR_WEBGL) : gl.getParameter(gl.VENDOR), renderer: ext ? gl.getParameter(ext.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER) };
+  } catch { return null; }
+}
+async function audioFP() {
+  try {
+    const A = window.OfflineAudioContext || window.webkitOfflineAudioContext; if (!A) return "";
+    const ctx = new A(1, 5000, 44100), o = ctx.createOscillator(), comp = ctx.createDynamicsCompressor();
+    o.type = "triangle"; o.frequency.value = 10000; o.connect(comp); comp.connect(ctx.destination); o.start(0);
+    const buf = await Promise.race([ctx.startRendering(), sleep(1500).then(() => null)]); if (!buf) return "";
+    const d = buf.getChannelData(0); let s = 0; for (let i = 4500; i < 5000; i++) s += Math.abs(d[i]); return s.toString();
+  } catch { return ""; }
+}
+function fonts() {
+  const list = ["Arial Black", "Calibri", "Cambria", "Candara", "Comic Sans MS", "Consolas", "Courier New", "Futura", "Garamond", "Georgia", "Helvetica Neue", "Impact", "Lucida Console", "Menlo", "Monaco", "Palatino", "Segoe UI", "SF Pro Display", "Tahoma", "Trebuchet MS", "Verdana", "Ubuntu", "DejaVu Sans", "Liberation Mono", "Noto Sans", "Roboto", "Fira Code", "JetBrains Mono", "Source Code Pro", "Hack", "Cascadia Code", "Inconsolata", "Microsoft YaHei", "MS Gothic", "Hiragino Sans", "Nirmala UI", "Mangal", "Adobe Garamond Pro", "Myriad Pro", "Minion Pro"];
+  const c = document.createElement("canvas").getContext("2d"), t = "mmmmmmmmmmlli10OQ@#";
+  const base = ["monospace", "serif", "sans-serif"].map(b => { c.font = `72px ${b}`; return c.measureText(t).width; });
+  return list.filter(f => ["monospace", "serif", "sans-serif"].some((b, i) => { c.font = `72px '${f}',${b}`; return c.measureText(t).width !== base[i]; }));
+}
+async function webrtc() {
+  try {
+    if (!window.RTCPeerConnection) return { state: "off" };
+    const pc = new RTCPeerConnection({ iceServers: [] }); const ips = new Set();
+    pc.createDataChannel("x");
+    pc.onicecandidate = e => { const m = e.candidate && e.candidate.candidate.match(/ ([0-9a-f.:]+|[\w-]+\.local) \d+ typ/i); if (m) ips.add(m[1]); };
+    await pc.setLocalDescription(await pc.createOffer()); await sleep(1200); pc.close();
+    const a = [...ips];
+    if (!a.length) return { state: "blocked" };
+    const raw = a.filter(x => !x.endsWith(".local"));
+    return raw.length ? { state: "leak", ips: raw } : { state: "masked" };
+  } catch { return { state: "blocked" }; }
+}
+function adblock() {
+  const d = document.createElement("div"); d.className = "adsbox ad-banner textads banner-ads"; d.style.cssText = "position:absolute;left:-999px;height:10px;width:10px";
+  document.body.appendChild(d); const blocked = d.offsetHeight === 0 || getComputedStyle(d).display === "none"; d.remove(); return blocked;
+}
+
+async function recon() {
+  const F = [];  // {g, k, v, bits, st: leak|ok|info, fix}
+  const add = (g, k, v, bits, st, fix = "") => F.push({ g, k, v: String(v), bits, st, fix });
+  const hard = B.firefox ? "about:config → privacy.resistFingerprinting = true" : B.brave ? "Shields → Fingerprinting: Strict" : "use Brave (Strict) or Firefox (resistFingerprinting), or Tor Browser";
+
+  // identity surface
+  let hev = null; try { hev = navigator.userAgentData && await navigator.userAgentData.getHighEntropyValues(["platformVersion", "architecture", "model", "fullVersionList"]); } catch {}
+  add("identity", "browser / os", `${B.name} on ${B.os}`, 3, "info");
+  add("identity", "user agent", B.ua.length > 70 ? B.ua.slice(0, 70) + "…" : B.ua, 7, "leak", "every request carries this. " + hard);
+  if (hev && (hev.platformVersion || hev.architecture)) add("identity", "client hints", `${B.os} ${hev.platformVersion || ""} · ${hev.architecture || "?"}${hev.model ? " · " + hev.model : ""}`, 3, "leak", "exact OS build, handed out on request. Brave/Firefox don't expose it");
+  add("identity", "timezone", TZ, 3, "leak", "a VPN changes your IP, not this. set the system timezone to UTC when it matters");
+  add("identity", "languages", (navigator.languages || [navigator.language]).join(", "), 2, (navigator.languages || []).length > 1 ? "leak" : "info", "multiple languages narrow you down. keep just one");
+  add("identity", "referrer", document.referrer || "(none)", 0, document.referrer ? "leak" : "ok", "sites see where you came from. strict referrer policy in your browser settings");
+
+  // hardware
+  add("hardware", "screen", `${screen.width}x${screen.height} @${devicePixelRatio}x · ${screen.colorDepth}-bit`, 5, "leak", "Tor Browser letterboxing / RFP rounds this");
+  add("hardware", "cpu threads", navigator.hardwareConcurrency || "hidden", 2, navigator.hardwareConcurrency ? "leak" : "ok", hard);
+  add("hardware", "memory", navigator.deviceMemory ? navigator.deviceMemory + " GB" : "hidden", 1, navigator.deviceMemory ? "leak" : "ok", "Chromium-only leak");
+  const gl = webgl();
+  if (gl) add("hardware", "gpu", (gl.renderer || "?").slice(0, 60), 7, /SwiftShader|Mesa|Generic|Apple GPU$/.test(gl.renderer) ? "info" : "leak", "your exact graphics chip. " + (B.firefox ? "webgl.disabled = true" : B.brave ? "Brave randomises this on Strict" : "disable WebGL or use Brave/Tor"));
+  add("hardware", "touch points", navigator.maxTouchPoints, 1, "info");
+  try { if (navigator.getBattery) { const b = await navigator.getBattery(); add("hardware", "battery", `${Math.round(b.level * 100)}%${b.charging ? " charging" : ""}`, 1, "leak", "short-lived tracking id. Firefox/Safari removed this API"); } } catch {}
+
+  // rendering fingerprints
+  const cv = canvasFP(), cvh = cv ? (await sha256(cv)).slice(0, 12) : "blocked";
+  add("fingerprint", "canvas", cvh, 8, cv ? "leak" : "ok", "how your GPU+fonts draw pixels. " + (B.brave ? "Brave Strict randomises it per site" : B.firefox ? "RFP prompts before canvas reads" : "use Brave or Firefox RFP"));
+  const au = await audioFP(), auh = au ? (await sha256(au)).slice(0, 12) : "blocked";
+  add("fingerprint", "audio stack", auh, 5, au ? "leak" : "ok", "tiny float differences in your audio pipeline. same fix as canvas");
+  const fl = fonts();
+  add("fingerprint", "fonts", `${fl.length} detected${fl.length ? ": " + fl.slice(0, 5).join(", ") + (fl.length > 5 ? "…" : "") : ""}`, Math.min(8, fl.length / 3), fl.length > 6 ? "leak" : "info", "every installed app adds fonts. RFP/Tor expose a fixed list");
+
+  // network & tracking
+  const rtc = await webrtc();
+  add("network", "webrtc local ip", rtc.state === "leak" ? rtc.ips.join(", ") : rtc.state, rtc.state === "leak" ? 4 : 0, rtc.state === "leak" ? "leak" : "ok", "leaks your LAN IP even behind a VPN. uBlock Origin → 'Prevent WebRTC leaking local IP'");
+  const nc = navigator.connection; if (nc && nc.effectiveType) add("network", "connection", `${nc.effectiveType}${nc.rtt ? " · rtt " + nc.rtt + "ms" : ""}`, 1, "info");
+  const ab = adblock();
+  add("network", "tracker blocking", ab ? "active" : "none detected", 0, ab ? "ok" : "leak", "install uBlock Origin. it blocks most trackers before they ever run");
+  const gpc = navigator.globalPrivacyControl === true, dnt = navigator.doNotTrack === "1";
+  add("network", "privacy signal", gpc ? "GPC on" : dnt ? "DNT only" : "off", 0, gpc ? "ok" : "leak", "Global Privacy Control is legally binding in some places. enable it (Brave/Firefox/DuckDuckGo)");
+  add("network", "cookies", navigator.cookieEnabled ? "enabled" : "disabled", 0, "info");
+
+  const seed = F.filter(f => f.g !== "network" || f.k === "webrtc local ip").map(f => f.v).join("|");
+  const fp = await sha256(seed);
+  // signals overlap, so discount the naive sum; real-world studies land most browsers at ~15-25 bits
+  const bits = Math.min(26, Math.round(0.6 * F.reduce((s, f) => s + (f.st === "leak" ? f.bits : f.bits / 3), 0)));
+  return { F, fp, bits };
+}
+let lastScan = null;
+const TAG = { leak: `<span class="red">[LEAK]</span>`, ok: `<span class="acc">[ OK ]</span>`, info: `<span class="dim">[INFO]</span>` };
+
+async function scanCmd(args) {
+  if (args[0] === "--export") {
+    if (!lastScan) return ["run <span class=\"hi\">scan</span> first."];
+    const txt = ["void recon report — " + new Date().toISOString(), "generated locally in your browser. nothing was sent.", "",
+      ...lastScan.F.map(f => `[${f.st.toUpperCase().padEnd(4)}] ${f.g.padEnd(12)} ${f.k.padEnd(18)} ${f.v}${f.st === "leak" && f.fix ? "\n        fix: " + f.fix : ""}`),
+      "", `fingerprint: ${lastScan.fp}`, `estimated identifying info: ~${lastScan.bits} bits`].join("\n");
+    const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([txt], { type: "text/plain" })); a.download = "void-recon.txt"; a.click();
+    return ["report saved as <span class=\"hi\">void-recon.txt</span>"];
+  }
+  await type(`<span class="dim">initiating passive recon on</span> <span class="acc">${ghost}</span> <span class="dim">(local only · no network requests)</span>`, 6);
+  const bar = line(""); const tick = setInterval(() => { bar.innerHTML = `<span class="acc">${"█".repeat(Math.floor(Date.now() / 90) % 32)}</span>`; }, 60);
+  const r = await recon(); lastScan = r; clearInterval(tick); bar.remove();
+  let g = "";
+  for (const f of r.F) {
+    if (f.g !== g) { g = f.g; line(""); line(`<span class="hi">── ${g.toUpperCase()} ${"─".repeat(Math.max(2, 40 - g.length))}</span>`); }
+    line(`${TAG[f.st]} ${f.k.padEnd(17)} ${esc(f.v)}`); await sleep(70);
+  }
+  const leaks = r.F.filter(f => f.st === "leak");
+  const one = "~1 in " + Math.pow(2, r.bits).toLocaleString();
+  const lvl = leaks.length >= 10 ? `<span class="red">HIGH</span>` : leaks.length >= 5 ? `<span style="color:#ffb000">MEDIUM</span>` : `<span class="acc">LOW</span>`;
+  line(""); line(`<span class="hi">── VERDICT ${"─".repeat(33)}</span>`);
+  line(`fingerprint   <span class="acc">${r.fp.slice(0, 16).match(/..../g).join(" ")}</span>`);
+  line(`uniqueness    ~${r.bits} bits → roughly ${one} browsers <span class="dim">(rough estimate)</span>`);
+  line(`exposure      ${lvl} · ${leaks.length} leaks`);
+  line(`<span class="dim">this id survives incognito, cleared cookies and most VPNs. no cookie needed.</span>`);
+  line(""); line(`<span class="hi">── HARDEN YOURSELF (top ${Math.min(4, leaks.length)}) ${"─".repeat(20)}</span>`);
+  const seen = new Set();
+  leaks.sort((a, b) => b.bits - a.bits).filter(f => f.fix && !seen.has(f.fix) && seen.add(f.fix)).slice(0, 4)
+    .forEach((f, i) => line(`<span class="acc">${i + 1}.</span> <span class="hi">${f.k}</span> <span class="dim">→</span> ${esc(f.fix)}`));
+  line(""); line(`<span class="dim">nothing above left this page. </span><span class="hi">scan --export</span><span class="dim"> saves it as a text file.</span>`);
+  renderMe(leaks.length);
+  return [];
+}
+
+const CMDS = {
+  help: () => HELP.map(([c, d]) => { const v = c.replace(/&lt;/g, "<").replace(/&gt;/g, ">"); return `  <span class="acc">${c}</span>${" ".repeat(Math.max(1, 28 - v.length))}<span class="dim">${d}</span>`; }),
+  whoami: () => [`<span class="acc">${ghost}</span>`, `<span class="dim">a random id made in your browser. no cookies sent, no tracking, no logs.</span>`, `<span class="dim">you are no one here. that's a compliment.</span>`],
+  ls: a => [(a.includes("-a") ? `<span class="dim">.  ..  </span><span class="red">.secret</span>  ` : "") + `about.txt  arsenal.txt  contacts.txt  <span class="acc">intercepted.bin</span>`],
+  dir: a => CMDS.ls(a),
+  cd: () => ["you're already where you need to be."],
+  pwd: () => ["/home/" + ghost],
+  cat: a => {
+    const f = a[0]; if (!f) return ["usage: cat &lt;file&gt;"];
+    if (!(f in FILES)) return [`cat: ${esc(f)}: No such file or directory`];
+    const r = FILES[f](); if (r === null) { shake(); return [`<span class="red">cat: ${f}: Permission denied</span>`, `<span class="dim">prove yourself first.</span>`]; }
+    return r;
+  },
+  echo: a => [esc(a.join(" "))],
+  date: () => [new Date().toString()],
+  uname: () => ["Linux void 6.x-hardened #1 SMP PREEMPT x86_64 GNU/Linux"],
+  neofetch: () => {
+    const art = [
+      "      ▄▄████▄▄      ", "    ▄██▀▀▀▀▀▀██▄    ", "   ██▀ ▄▀▄▀▄▀ ▀██   ", "  ██  <span class=\"acc\">▀▀▀  ▀▀▀</span>  ██  ",
+      "  ██            ██  ", "   ██▄   ▔▔   ▄██   ", "  ▄███▄▄▄▄▄▄▄▄███▄  ", " ████████████████ ",
+    ];
+    const info = [
+      `<span class="acc">${ghost}</span>@<span class="acc">void</span>`, `<span class="dim">─────────────────</span>`,
+      `<span class="acc">OS</span>      void linux (hardened)`, `<span class="acc">Kernel</span>  6.x-void`, `<span class="acc">Shell</span>   vsh 0.1`,
+      `<span class="acc">Uptime</span>  since the first segfault`, `<span class="acc">Visits</span>  ${visits}`, `<span class="acc">Status</span>  ${solved ? '<span class="acc">root</span>' : '<span class="red">unprivileged</span>'}`,
+    ];
+    if (innerWidth < 640) return [...art, "", ...info];
+    return art.map((l, i) => l + " ".repeat(Math.max(1, 23 - l.replace(/<[^>]+>/g, "").length)) + (info[i] || ""));
+  },
+  nmap: async () => {
+    await type(`<span class="dim">Starting Nmap against 127.0.0.1 ...</span>`, 8);
+    await sleep(500);
+    return [`PORT      STATE     SERVICE`, `22/tcp    <span class="dim">filtered</span>  ssh`, `443/tcp   <span class="acc">open</span>      you`, `1337/tcp  <span class="acc">open</span>      <span class="red">???</span>`, `<span class="dim">Nmap done: 1 IP address (1 host up)</span>`];
+  },
+  ping: async () => { const o = []; for (let i = 1; i <= 3; i++) { await sleep(350); line(`64 bytes from void: icmp_seq=${i} ttl=64 time=${(Math.random() * 30 + 3).toFixed(1)} ms`); } return ["<span class=\"dim\">I see you.</span>"]; },
+  fortune: () => [`<span class="hi">${FORTUNES[Math.random() * FORTUNES.length | 0]}</span>`],
+  base64: a => { const s = a.filter(x => x !== "-d")[0]; if (!s) return ["usage: base64 -d &lt;string&gt;"]; try { return [esc(atob(s))]; } catch { return ["<span class=\"red\">base64: invalid input</span>"]; } },
+  unhex: a => { const s = (a[0] || "").replace(/\s/g, ""); if (!/^([0-9a-f]{2})+$/i.test(s)) return ["usage: unhex &lt;hexstring&gt;"]; return [esc(s.match(/../g).map(h => String.fromCharCode(parseInt(h, 16))).join(""))]; },
+  rot13: a => a.length ? [esc(rot13(a.join(" ")))] : ["usage: rot13 &lt;text&gt;"],
+  hint: a => ({ 1: ["ends in '='. you've seen this padding before."], 2: ["only 0-9a-f, in pairs. two nibbles, one byte."], 3: ["caesar would be proud. half the alphabet."] }[a[0]] || ["usage: hint &lt;1|2|3&gt;"]),
+  decrypt: async a => {
+    const g = a.join(" ").trim(); if (!g) return ["usage: decrypt flag{...}", `<span class="dim">checked with SHA-256 in your browser. the guess never leaves this page.</span>`];
+    await type(`<span class="dim">hashing locally... sha256(${"*".repeat(Math.min(g.length, 24))})</span>`, 6);
+    await sleep(400);
+    if (await sha256(g) !== FLAG_SHA) { shake(); return [`<span class="red">checksum mismatch.</span> try harder.`]; }
+    solved = true; store.set("solved", true); flash(); renderMe();
+    return [
+      `<span class="acc">checksum OK. root obtained.</span>`, ``,
+      `.secret is now readable. try <span class="hi">cat .secret</span>`, ``,
+      `want your ghost in the public <span class="hi">Hall of Shadows</span>? run <span class="acc">claim &lt;your-github-username&gt;</span>`,
+      `<span class="dim">it builds a proof hash bound to your name. the flag itself is never posted.</span>`,
+    ];
+  },
+  claim: async a => {
+    if (!solved) return ["<span class=\"red\">nothing to claim. solve intercepted.bin first.</span>"];
+    const u = (a[0] || "").trim(); if (!/^[a-z0-9-]{1,39}$/i.test(u)) return ["usage: claim &lt;github-username&gt;"];
+    const proof = await sha256(`${FLAG_SHA}:${u}`);
+    const url = `https://github.com/${REPO}/issues/new?` + new URLSearchParams({ title: `term: decrypt ${proof}`, body: "Proof generated by the void terminal. Just submit. The flag is not in here." });
+    return [`proof: <span class="acc">${proof}</span>`, ``, `<a href="${url}" target="_blank" rel="noopener">→ submit proof to the Hall of Shadows</a> <span class="dim">(opens a GitHub issue, a bot verifies it)</span>`];
+  },
+  hall: async () => { await loadHall(); return [document.getElementById("hall").innerHTML]; },
+  theme: a => { if (!["green", "red", "amber"].includes(a[0])) return ["usage: theme green|red|amber"]; theme = a[0]; store.set("theme", theme); document.body.classList.toggle("red", theme === "red"); document.body.classList.toggle("amber", theme === "amber"); return [`phosphor set to ${theme}.`]; },
+  matrix: () => { rainBoost = !rainBoost; document.getElementById("rain").style.opacity = rainBoost ? .55 : .16; return [rainBoost ? "wake up." : "back to sleep."]; },
+  history: () => hist.map((h, i) => `<span class="dim">${String(i + 1).padStart(4)}</span>  ${esc(h)}`),
+  clear: () => { [...$out.children].forEach(c => c !== promptEl && c.remove()); return []; },
+  sudo: () => { shake(); return [`<span class="red">${ghost} is not in the sudoers file. this incident will be reported.</span>`, `<span class="dim">(it won't. but it felt real, right?)</span>`]; },
+  su: () => CMDS.sudo(),
+  rm: () => { shake(); return ["nice try."]; },
+  exit: () => ["there is no exit. only other terminals."],
+  logout: () => CMDS.exit(),
+  vim: () => ["you'd never get out. trust me."],
+  github: () => { window.open(LINKS.github, "_blank", "noopener"); return [`opening ${LINKS.github}`]; },
+  contact: () => FILES["contacts.txt"](),
+  scan: a => scanCmd(a),
+  recon: a => scanCmd(a),
+  passwd: () => { shake(); return [`<span class="red">stop.</span> you were about to type a password into a stranger's terminal.`, `<span class="dim">lesson one. never do that. not even here.</span>`]; },
+};
+
+async function exec(raw) {
+  const cmd = raw.trim();
+  line(P() + esc(cmd));
+  if (!cmd) return;
+  hist.push(cmd); hist = hist.slice(-100); store.set("hist", hist); hi = hist.length;
+  const [c, ...args] = cmd.split(/\s+/);
+  const fn = CMDS[c.toLowerCase()];
+  if (!fn) { line(`<span class="red">${esc(c)}: command not found.</span> <span class="dim">try 'help'</span>`); return; }
+  const r = await fn(args);
+  (r || []).forEach(l => line(l));
+}
+
+/* ============================================================ input */
+$in.addEventListener("input", renderPrompt);
+$in.addEventListener("keydown", async e => {
+  if (busy) { e.preventDefault(); return; }
+  if (e.key === "Enter") {
+    e.preventDefault(); const v = $in.value; $in.value = ""; busy = true; promptEl.style.visibility = "hidden";
+    await exec(v); busy = false; promptEl.style.visibility = ""; renderPrompt();
+  } else if (e.key === "ArrowUp") { e.preventDefault(); if (hi > 0) $in.value = hist[--hi]; renderPrompt(); }
+  else if (e.key === "ArrowDown") { e.preventDefault(); hi = Math.min(hist.length, hi + 1); $in.value = hist[hi] || ""; renderPrompt(); }
+  else if (e.key === "Tab") {
+    e.preventDefault(); const parts = $in.value.split(" "); const last = parts.pop();
+    const pool = parts.length ? Object.keys(FILES) : Object.keys(CMDS);
+    const m = pool.filter(x => x.startsWith(last)); if (m.length === 1) { parts.push(m[0]); $in.value = parts.join(" ") + (parts.length === 1 ? " " : ""); renderPrompt(); }
+    else if (m.length > 1) { line(P() + esc($in.value)); line(m.join("  ")); }
+  } else if (e.key === "l" && e.ctrlKey) { e.preventDefault(); CMDS.clear(); }
+});
+const focus = () => { if (!window.getSelection().toString()) $in.focus({ preventScroll: true }); };
+document.getElementById("term").addEventListener("click", focus);
+
+const chips = ["scan", "help", "whoami", "ls -a", "cat about.txt", "cat intercepted.bin", "neofetch", "nmap", "fortune", "matrix", "sudo su"];
+const $chips = document.getElementById("chips");
+chips.forEach(c => { const b = document.createElement("button"); b.textContent = c; b.onclick = async ev => { ev.stopPropagation(); if (busy) return; busy = true; promptEl.style.visibility = "hidden"; await exec(c); busy = false; promptEl.style.visibility = ""; renderPrompt(); focus(); }; $chips.appendChild(b); });
+
+/* ============================================================ fx */
+function shake() { document.body.classList.remove("shake"); void document.body.offsetWidth; document.body.classList.add("shake"); }
+function flash() { const t = document.getElementById("term"); t.animate([{ boxShadow: "0 0 0 rgba(0,0,0,0)" }, { boxShadow: "0 0 80px var(--acc)" }, { boxShadow: "0 0 40px rgba(0,0,0,.6)" }], { duration: 1200 }); }
+const cv = document.getElementById("rain"), cx = cv.getContext("2d");
+const K = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789";
+let cols = [], fs = 16, rainBoost = false;
+function size() { cv.width = innerWidth; cv.height = innerHeight; cols = Array(Math.ceil(cv.width / fs)).fill(0).map(() => Math.random() * -50); }
+size(); addEventListener("resize", size);
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+function rain() {
+  cx.fillStyle = "rgba(5,8,7,.12)"; cx.fillRect(0, 0, cv.width, cv.height);
+  cx.fillStyle = getComputedStyle(document.body).getPropertyValue("--acc"); cx.font = fs + "px JetBrains Mono, monospace";
+  cols.forEach((y, i) => { cx.fillText(K[Math.random() * K.length | 0], i * fs, y * fs); cols[i] = y * fs > cv.height && Math.random() > .975 ? 0 : y + 1; });
+  setTimeout(() => requestAnimationFrame(rain), rainBoost ? 33 : 60);
+}
+if (!reduce) rain();
+
+/* ============================================================ side panels */
+async function loadHall() {
+  const el = document.getElementById("hall");
+  try {
+    const r = await fetch(STATE_URL, { cache: "no-store" }); if (!r.ok) throw 0;
+    const s = await r.json();
+    const rows = (s.solvers || []).slice(-8).map((x, i) => `<span class="acc">#${String(i + 1).padEnd(3)}</span>${x.who}  <span class="dim">${x.at}</span>`);
+    el.innerHTML = (rows.length ? rows.join("\n") : `<span class="dim">(empty) be the first.</span>`) +
+      `\n\n<span class="dim">sessions ${s.sessions || 0} · ghosts ${(s.ghosts || []).length}</span>`;
+  } catch { el.innerHTML = `<span class="dim">(offline) couldn't reach the log.</span>`; }
+}
+function renderMe(leaks) {
+  if (leaks !== undefined) store.set("leaks", leaks);
+  const L = store.get("leaks", null);
+  document.getElementById("me").innerHTML =
+    `id       <span class="acc">${ghost}</span>\nvisits   ${visits}\nstatus   ${solved ? '<span class="acc">root</span>' : '<span class="red">unprivileged</span>'}\nleaks    ${L === null ? '<span class="dim">run scan</span>' : (L > 5 ? '<span class="red">' : '<span class="acc">') + L + '</span>'}\n\n<span class="dim">stored only in your browser.</span>`;
+}
+renderMe(); loadHall();
+
+/* ============================================================ boot */
+(async () => {
+  const boot = [
+    `<span class="dim">[    0.000000]</span> Linux version 6.x-void (root@nowhere) #1 SMP PREEMPT`,
+    `<span class="dim">[    0.004210]</span> KASLR enabled · SMEP/SMAP on · stack canaries armed`,
+    `<span class="dim">[    0.113370]</span> <span class="acc">ghost:</span> routing through 3 relays ............ <span class="acc">OK</span>`,
+    `<span class="dim">[    0.271828]</span> <span class="acc">crypt:</span> AES-256-GCM session key negotiated .. <span class="acc">OK</span>`,
+    `<span class="dim">[    0.314159]</span> <span class="acc">ident:</span> scrubbing metadata ................... <span class="acc">OK</span>`,
+    `<span class="dim">[    0.404000]</span> <span class="red">warn: observer detected: ${B.name} on ${B.os} · ${TZ} · ${navigator.hardwareConcurrency || "?"} threads</span>`,
+  ];
+  const fast = visits > 1 || reduce;
+  for (const b of boot) fast ? line(b) : await type(b, 4);
+  line("");
+  [
+    `<span class="acc"> ██████╗ ██╗  ██╗    ██╗   ██╗ ██████╗ ██╗██████╗ </span>`,
+    `<span class="acc">██╔═████╗╚██╗██╔╝    ██║   ██║██╔═══██╗██║██╔══██╗</span>`,
+    `<span class="acc">██║██╔██║ ╚███╔╝     ██║   ██║██║   ██║██║██║  ██║</span>`,
+    `<span class="acc">████╔╝██║ ██╔██╗     ╚██╗ ██╔╝██║   ██║██║██║  ██║</span>`,
+    `<span class="acc">╚██████╔╝██╔╝ ██╗     ╚████╔╝ ╚██████╔╝██║██████╔╝</span>`,
+    `<span class="acc"> ╚═════╝ ╚═╝  ╚═╝      ╚═══╝   ╚═════╝ ╚═╝╚═════╝ </span>`,
+  ].forEach(l => line(l));
+  line("");
+  line(`welcome${visits > 1 ? " back" : ""}, <span class="acc">${ghost}</span>. type <span class="hi">help</span>, or tap a key below.`);
+  line(`<span class="dim">nothing you type here leaves your browser.</span>`);
+  line("");
+  line(`<span class="red">▲</span> that warning above? any website can read it. there's more.`);
+  line(`  run <span class="acc">scan</span> to see everything your browser gives away, and how to shut it down.`);
+  line("");
+  busy = false; renderPrompt(); focus();
+  const auto = new URLSearchParams(location.search).get("run");
+  if (auto === "scan") { busy = true; promptEl.style.visibility = "hidden"; await exec("scan"); busy = false; promptEl.style.visibility = ""; renderPrompt(); }
+})();
+})();
+</script>
+</body>
+</html>
