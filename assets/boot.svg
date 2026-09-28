@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="218" viewBox="0 0 1000 218">
+<style>
+  text { font: 14px ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace; white-space: pre; }
+  @keyframes w0{0%,0.00%{width:0}6.99%,100%{width:1000px}}@keyframes w1{0%,8.74%{width:0}15.73%,100%{width:1000px}}@keyframes w2{0%,17.48%{width:0}24.47%,100%{width:1000px}}@keyframes w3{0%,26.21%{width:0}33.20%,100%{width:1000px}}@keyframes w4{0%,34.95%{width:0}41.94%,100%{width:1000px}}@keyframes w5{0%,43.69%{width:0}50.68%,100%{width:1000px}}@keyframes w6{0%,52.43%{width:0}59.42%,100%{width:1000px}}
+</style>
+<defs><clipPath id="k0"><rect x="0" y="26" height="24" style="animation:w0 10.3s linear infinite"/></clipPath><clipPath id="k1"><rect x="0" y="50" height="24" style="animation:w1 10.3s linear infinite"/></clipPath><clipPath id="k2"><rect x="0" y="74" height="24" style="animation:w2 10.3s linear infinite"/></clipPath><clipPath id="k3"><rect x="0" y="98" height="24" style="animation:w3 10.3s linear infinite"/></clipPath><clipPath id="k4"><rect x="0" y="122" height="24" style="animation:w4 10.3s linear infinite"/></clipPath><clipPath id="k5"><rect x="0" y="146" height="24" style="animation:w5 10.3s linear infinite"/></clipPath><clipPath id="k6"><rect x="0" y="170" height="24" style="animation:w6 10.3s linear infinite"/></clipPath>
+  <pattern id="l" width="3" height="3" patternUnits="userSpaceOnUse"><rect width="3" height="1" fill="#000" fill-opacity=".4"/></pattern>
+</defs>
+<rect width="1000" height="218" rx="8" fill="#050807" stroke="#00ff41" stroke-opacity=".25"/>
+<circle cx="18" cy="14" r="4" fill="#ff0055"/><circle cx="32" cy="14" r="4" fill="#ffb000"/><circle cx="46" cy="14" r="4" fill="#00ff41"/>
+<text x="500" y="18" text-anchor="middle" fill="#8b949e" style="font-size:11px">tty0 — /dev/null/visitor</text>
+<text x="20" y="44" fill="#8b949e" clip-path="url(#k0)">[    0.000000] Linux version 6.x-void (root@nowhere) #1 SMP PREEMPT</text><text x="20" y="68" fill="#8b949e" clip-path="url(#k1)">[    0.004210] KASLR enabled · SMEP/SMAP on · stack canaries armed</text><text x="20" y="92" fill="#00ff41" clip-path="url(#k2)">[    0.113370] ghost: routing through 3 relays ............ OK</text><text x="20" y="116" fill="#00ff41" clip-path="url(#k3)">[    0.271828] crypt: AES-256-GCM session key negotiated .. OK</text><text x="20" y="140" fill="#00ff41" clip-path="url(#k4)">[    0.314159] ident: scrubbing metadata ................... OK</text><text x="20" y="164" fill="#ff0055" clip-path="url(#k5)">[    0.404000] warn: observer detected. hello, you.</text><text x="20" y="188" fill="#e6ffe9" clip-path="url(#k6)">[    0.666666] payload decrypted. scroll down, if you dare.</text>
+<rect width="1000" height="218" rx="8" fill="url(#l)"/>
+</svg>

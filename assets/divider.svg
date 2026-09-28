@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="18" viewBox="0 0 1000 18">
+<style>
+ .d{font:11px ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;fill:#00ff41;opacity:.5;white-space:pre}
+ .m{animation:mv 12s linear infinite} @keyframes mv{from{transform:translateX(0)}to{transform:translateX(-500px)}}
+</style>
+<g class="m"><text class="d" y="13">░▒▓█ 01001110 01001111 01001111 01001110 01000101 █▓▒░ ── ヌル ── ░▒▓█ 01001110 01001111 01001111 01001110 01000101 █▓▒░ ── ヌル ── ░▒▓█ 01001110 01001111 01001111 01001110 01000101 █▓▒░ ── ヌル ── ░▒▓█ 01001110 01001111 01001111 01001110 01000101 █▓▒░ ── ヌル ── </text></g>
+</svg>

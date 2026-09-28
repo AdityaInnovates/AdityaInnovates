@@ -1,0 +1,46 @@
+{
+ "sessions": 6,
+ "history": [
+  {
+   "who": "ghost_2a87",
+   "cmd": "decrypt ********",
+   "out": [
+    "proof rejected. try harder."
+   ]
+  },
+  {
+   "who": "ghost_18bc",
+   "cmd": "decrypt ********",
+   "out": [
+    "proof verified. root obtained.",
+    "ghost_18bc joins the hall of shadows (#1)."
+   ]
+  },
+  {
+   "who": "ghost_18bc",
+   "cmd": "cat .secret",
+   "out": [
+    "access granted.",
+    "you already know where I live."
+   ]
+  },
+  {
+   "who": "ghost_bbec",
+   "cmd": "scriptrm/script && $(whoami)",
+   "out": [
+    "scriptrm/script: command not found. try 'help'"
+   ]
+  }
+ ],
+ "solvers": [
+  {
+   "who": "ghost_18bc",
+   "at": "2026-09-28"
+  }
+ ],
+ "ghosts": [
+  "ghost_18bc",
+  "ghost_2a87",
+  "ghost_bbec"
+ ]
+}

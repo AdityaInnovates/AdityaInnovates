@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="139" height="44" viewBox="0 0 139 44">
+<style>
+text{font:600 14px ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;white-space:pre}
+.k{animation:g 3.2s ease-in-out infinite;animation-delay:2.10s}
+@keyframes g{0%,100%{stroke-opacity:.35}50%{stroke-opacity:1}}
+</style>
+<rect x="1" y="5" width="137" height="37" rx="7" fill="#020403"/>
+<rect class="k" x="1" y="1" width="137" height="36" rx="7" fill="#07100a" stroke="#ff0055" stroke-width="1.5"/>
+<text x="69.5" y="24" text-anchor="middle" fill="#ff0055">decrypt ▮▮▮</text>
+</svg>

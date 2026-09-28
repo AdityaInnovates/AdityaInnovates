@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="94" height="44" viewBox="0 0 94 44">
+<style>
+text{font:600 14px ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;white-space:pre}
+.k{animation:g 3.2s ease-in-out infinite;animation-delay:0.35s}
+@keyframes g{0%,100%{stroke-opacity:.35}50%{stroke-opacity:1}}
+</style>
+<rect x="1" y="5" width="92" height="37" rx="7" fill="#020403"/>
+<rect class="k" x="1" y="1" width="92" height="36" rx="7" fill="#07100a" stroke="#00ff41" stroke-width="1.5"/>
+<text x="47.0" y="24" text-anchor="middle" fill="#00ff41">whoami</text>
+</svg>

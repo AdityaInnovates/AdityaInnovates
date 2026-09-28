@@ -1,0 +1,46 @@
+name: void-terminal
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: void-terminal
+  cancel-in-progress: false
+
+jobs:
+  run:
+    if: startsWith(github.event.issue.title, 'term:')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Execute command
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_USER: ${{ github.event.issue.user.login }}
+        run: python3 .github/terminal/engine.py
+
+      - name: Commit
+        run: |
+          git config user.name  "void-terminal"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md assets/terminal.svg .github/terminal/state.json
+          git diff --cached --quiet || git commit -m "session: $(date -u +%s)"
+          git pull --rebase --quiet && git push
+
+      - name: Reply and close
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NUM: ${{ github.event.issue.number }}
+          TITLE: ${{ github.event.issue.title }}
+        run: |
+          case "$TITLE" in
+            [Tt]erm:*[Dd]ecrypt*|[Tt]erm:*[Ss]ubmit*) gh issue edit "$NUM" --title "term: decrypt [redacted]" ;;
+          esac
+          gh issue comment "$NUM" --body-file reply.md
+          gh issue close "$NUM"
