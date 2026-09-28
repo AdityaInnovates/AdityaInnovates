@@ -1,87 +1,84 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="320" viewBox="0 0 1000 320" role="img" aria-label="// HISTORY">
-<title>// HISTORY</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="368" viewBox="0 0 1000 368" role="img" aria-label="// HISTORY">
+<title>// HISTORY — scope --since 2022 --ch1 contributions</title>
 <style>
-text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;}
-.h{font-size:12px;letter-spacing:2px;fill:#6e7d72} .s{font-size:11px;fill:#6e7d72}
+text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+.h{font-size:12px;letter-spacing:2px;fill:#6e7d72} .s{font-size:11px;fill:#6e7d72} .c{font-size:12px;fill:#9fb3a4}
 .v{font-size:24px;font-weight:700;fill:#e6ffe9} .l{font-size:10px;letter-spacing:1.5px;fill:#6e7d72}
-.t{font-size:11px;fill:#9fb3a4} .b{font-size:12px;fill:#e6ffe9}
+.t{font-size:12px;fill:#9fb3a4} .b{font-size:12px;fill:#e6ffe9}
 .cur{animation:bk 1s steps(1) infinite} @keyframes bk{50%{opacity:0}}
-.scan{animation:sc 6s linear infinite} @keyframes sc{from{transform:translateY(-30px)}to{transform:translateY(320px)}}
-@keyframes gr{from{transform:scaleY(0)}to{transform:scaleY(1)}}@keyframes gx{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes fi{from{opacity:0}to{opacity:1}}
+.fl{animation:fl 7s infinite} @keyframes fl{0%,96%,100%{opacity:1}97%{opacity:.75}98.5%{opacity:.95}}
+@keyframes sweep{0%{stroke-dashoffset:1}80%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes ping{0%,100%{opacity:.5}6%{opacity:1}}
 </style>
-<defs><pattern id="sl" width="3" height="3" patternUnits="userSpaceOnUse"><rect width="3" height="1" fill="#000" fill-opacity=".35"/></pattern></defs>
-<rect width="1000" height="320" rx="10" fill="#050807" stroke="#00ff41" stroke-opacity=".25"/>
-<text x="24" y="30" class="h">// HISTORY<tspan class="cur" fill="#00ff41"> _</tspan></text>
-<text x="976" y="30" class="s" text-anchor="end">monthly contributions since 2022</text>
+<defs>
+<pattern id="sl" width="3" height="3" patternUnits="userSpaceOnUse"><rect width="3" height="1" fill="#000" fill-opacity=".35"/></pattern>
+<filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<g class="fl">
+<rect width="1000" height="368" rx="10" fill="#050807" stroke="#00ff41" stroke-opacity=".25"/>
+<text x="24" y="30" class="h">// HISTORY</text>
+<text x="129" y="30" class="c"><tspan fill="#00ff41">root@void</tspan>:~# scope --since 2022 --ch1 contributions<tspan class="cur" fill="#00ff41"> █</tspan></text>
+<text x="976" y="30" class="s" text-anchor="end">@AdityaInnovates · synced 2026-09-28</text>
 <line x1="24" y1="42" x2="976" y2="42" stroke="#1c2b20"/>
-<line x1="56" y1="260" x2="756" y2="260" stroke="#1c2b20"/><text x="48" y="264" class="s" text-anchor="end">0</text>
-<line x1="56" y1="165.0" x2="756" y2="165.0" stroke="#1c2b20"/><text x="48" y="169.0" class="s" text-anchor="end">200</text>
-<line x1="56" y1="70" x2="756" y2="70" stroke="#1c2b20"/><text x="48" y="74" class="s" text-anchor="end">400</text>
-<line x1="56.0" y1="64" x2="56.0" y2="260" stroke="#1c2b20" stroke-dasharray="2 3"/><text x="60.0" y="276" class="t">2022</text><text x="60.0" y="290" class="s">1,216</text>
-<path d="M81.6,260 v-0.0 q0,-0.5 0.5,-0.5 h9.3 q0.5,0 0.5,0.5 v0.0z" fill="#04b83c" style="transform-origin:80.6px 260px;animation:gr .7s 0.02s both"><title>Mar 2022: 1</title></path>
-<path d="M93.8,260 v-6.5 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v6.5z" fill="#04b83c" style="transform-origin:92.8px 260px;animation:gr .7s 0.02s both"><title>Apr 2022: 20</title></path>
-<path d="M106.1,260 v-1.3 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v1.3z" fill="#04b83c" style="transform-origin:105.1px 260px;animation:gr .7s 0.03s both"><title>May 2022: 9</title></path>
-<path d="M118.4,260 v-37.9 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v37.9z" fill="#04b83c" style="transform-origin:117.4px 260px;animation:gr .7s 0.04s both"><title>Jun 2022: 86</title></path>
-<path d="M130.7,260 v-22.2 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v22.2z" fill="#04b83c" style="transform-origin:129.7px 260px;animation:gr .7s 0.05s both"><title>Jul 2022: 53</title></path>
-<path d="M143.0,260 v-28.8 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v28.8z" fill="#04b83c" style="transform-origin:142.0px 260px;animation:gr .7s 0.06s both"><title>Aug 2022: 67</title></path>
-<path d="M155.2,260 v-141.4 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v141.4z" fill="#00ff41" style="transform-origin:154.2px 260px;animation:gr .7s 0.06s both"><title>Sep 2022: 304</title></path>
-<path d="M167.5,260 v-55.0 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v55.0z" fill="#04b83c" style="transform-origin:166.5px 260px;animation:gr .7s 0.07s both"><title>Oct 2022: 122</title></path>
-<path d="M179.8,260 v-118.1 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v118.1z" fill="#04b83c" style="transform-origin:178.8px 260px;animation:gr .7s 0.08s both"><title>Nov 2022: 255</title></path>
-<path d="M192.1,260 v-139.0 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v139.0z" fill="#04b83c" style="transform-origin:191.1px 260px;animation:gr .7s 0.09s both"><title>Dec 2022: 299</title></path>
-<path d="M204.4,260 v-52.1 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v52.1z" fill="#04b83c" style="transform-origin:203.4px 260px;animation:gr .7s 0.10s both"><title>Jan 2023: 116</title></path>
-<line x1="203.4" y1="64" x2="203.4" y2="260" stroke="#1c2b20" stroke-dasharray="2 3"/><text x="207.4" y="276" class="t">2023</text><text x="207.4" y="290" class="s">847</text>
-<path d="M216.6,260 v-30.7 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v30.7z" fill="#04b83c" style="transform-origin:215.6px 260px;animation:gr .7s 0.10s both"><title>Feb 2023: 71</title></path>
-<path d="M228.9,260 v-42.1 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v42.1z" fill="#04b83c" style="transform-origin:227.9px 260px;animation:gr .7s 0.11s both"><title>Mar 2023: 95</title></path>
-<path d="M241.2,260 v-58.8 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v58.8z" fill="#04b83c" style="transform-origin:240.2px 260px;animation:gr .7s 0.12s both"><title>Apr 2023: 130</title></path>
-<path d="M253.5,260 v-22.2 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v22.2z" fill="#04b83c" style="transform-origin:252.5px 260px;animation:gr .7s 0.13s both"><title>May 2023: 53</title></path>
-<path d="M265.8,260 v-39.8 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v39.8z" fill="#04b83c" style="transform-origin:264.8px 260px;animation:gr .7s 0.14s both"><title>Jun 2023: 90</title></path>
-<path d="M278.1,260 v-29.8 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v29.8z" fill="#04b83c" style="transform-origin:277.1px 260px;animation:gr .7s 0.14s both"><title>Jul 2023: 69</title></path>
-<path d="M290.3,260 v-45.0 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v45.0z" fill="#04b83c" style="transform-origin:289.3px 260px;animation:gr .7s 0.15s both"><title>Aug 2023: 101</title></path>
-<path d="M302.6,260 v-23.1 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v23.1z" fill="#04b83c" style="transform-origin:301.6px 260px;animation:gr .7s 0.16s both"><title>Sep 2023: 55</title></path>
-<path d="M314.9,260 v-12.7 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v12.7z" fill="#04b83c" style="transform-origin:313.9px 260px;animation:gr .7s 0.17s both"><title>Oct 2023: 33</title></path>
-<path d="M327.2,260 v-0.0 q0,-1.4 1.4,-1.4 h7.4 q1.4,0 1.4,1.4 v0.0z" fill="#04b83c" style="transform-origin:326.2px 260px;animation:gr .7s 0.18s both"><title>Nov 2023: 3</title></path>
-<path d="M339.5,260 v-11.7 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v11.7z" fill="#04b83c" style="transform-origin:338.5px 260px;animation:gr .7s 0.18s both"><title>Dec 2023: 31</title></path>
-<path d="M351.7,260 v-17.4 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v17.4z" fill="#04b83c" style="transform-origin:350.7px 260px;animation:gr .7s 0.19s both"><title>Jan 2024: 43</title></path>
-<line x1="350.7" y1="64" x2="350.7" y2="260" stroke="#1c2b20" stroke-dasharray="2 3"/><text x="354.7" y="276" class="t">2024</text><text x="354.7" y="290" class="s">538</text>
-<path d="M364.0,260 v-0.0 q0,-0.9 0.9,-0.9 h8.4 q0.9,0 0.9,0.9 v0.0z" fill="#04b83c" style="transform-origin:363.0px 260px;animation:gr .7s 0.20s both"><title>Feb 2024: 2</title></path>
-<path d="M376.3,260 v-8.9 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v8.9z" fill="#04b83c" style="transform-origin:375.3px 260px;animation:gr .7s 0.21s both"><title>Mar 2024: 25</title></path>
-<path d="M388.6,260 v-2.7 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v2.7z" fill="#04b83c" style="transform-origin:387.6px 260px;animation:gr .7s 0.22s both"><title>Apr 2024: 12</title></path>
-<path d="M400.9,260 v-12.7 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v12.7z" fill="#04b83c" style="transform-origin:399.9px 260px;animation:gr .7s 0.22s both"><title>May 2024: 33</title></path>
-<path d="M413.1,260 v-16.0 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v16.0z" fill="#04b83c" style="transform-origin:412.1px 260px;animation:gr .7s 0.23s both"><title>Jun 2024: 40</title></path>
-<path d="M425.4,260 v-16.5 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v16.5z" fill="#04b83c" style="transform-origin:424.4px 260px;animation:gr .7s 0.24s both"><title>Jul 2024: 41</title></path>
-<path d="M437.7,260 v-7.4 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v7.4z" fill="#04b83c" style="transform-origin:436.7px 260px;animation:gr .7s 0.25s both"><title>Aug 2024: 22</title></path>
-<path d="M450.0,260 v-0.0 q0,-1.9 1.9,-1.9 h6.5 q1.9,0 1.9,1.9 v0.0z" fill="#04b83c" style="transform-origin:449.0px 260px;animation:gr .7s 0.26s both"><title>Sep 2024: 4</title></path>
-<path d="M462.3,260 v-64.9 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v64.9z" fill="#04b83c" style="transform-origin:461.3px 260px;animation:gr .7s 0.26s both"><title>Oct 2024: 143</title></path>
-<path d="M474.5,260 v-11.7 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v11.7z" fill="#04b83c" style="transform-origin:473.5px 260px;animation:gr .7s 0.27s both"><title>Nov 2024: 31</title></path>
-<path d="M486.8,260 v-64.5 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v64.5z" fill="#04b83c" style="transform-origin:485.8px 260px;animation:gr .7s 0.28s both"><title>Dec 2024: 142</title></path>
-<path d="M499.1,260 v-3.7 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v3.7z" fill="#04b83c" style="transform-origin:498.1px 260px;animation:gr .7s 0.29s both"><title>Jan 2025: 14</title></path>
-<line x1="498.1" y1="64" x2="498.1" y2="260" stroke="#1c2b20" stroke-dasharray="2 3"/><text x="502.1" y="276" class="t">2025</text><text x="502.1" y="290" class="s">332</text>
-<path d="M523.7,260 v-76.8 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v76.8z" fill="#04b83c" style="transform-origin:522.7px 260px;animation:gr .7s 0.30s both"><title>Mar 2025: 168</title></path>
-<path d="M535.9,260 v-29.3 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v29.3z" fill="#04b83c" style="transform-origin:534.9px 260px;animation:gr .7s 0.31s both"><title>Apr 2025: 68</title></path>
-<path d="M548.2,260 v-10.3 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v10.3z" fill="#04b83c" style="transform-origin:547.2px 260px;animation:gr .7s 0.32s both"><title>May 2025: 28</title></path>
-<path d="M560.5,260 v-0.0 q0,-1.4 1.4,-1.4 h7.4 q1.4,0 1.4,1.4 v0.0z" fill="#04b83c" style="transform-origin:559.5px 260px;animation:gr .7s 0.33s both"><title>Jun 2025: 3</title></path>
-<path d="M572.8,260 v-0.0 q0,-1.9 1.9,-1.9 h6.5 q1.9,0 1.9,1.9 v0.0z" fill="#04b83c" style="transform-origin:571.8px 260px;animation:gr .7s 0.34s both"><title>Jul 2025: 4</title></path>
-<path d="M585.1,260 v-2.2 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v2.2z" fill="#04b83c" style="transform-origin:584.1px 260px;animation:gr .7s 0.34s both"><title>Aug 2025: 11</title></path>
-<path d="M597.4,260 v-8.4 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v8.4z" fill="#04b83c" style="transform-origin:596.4px 260px;animation:gr .7s 0.35s both"><title>Sep 2025: 24</title></path>
-<path d="M621.9,260 v-0.8 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v0.8z" fill="#04b83c" style="transform-origin:620.9px 260px;animation:gr .7s 0.37s both"><title>Nov 2025: 8</title></path>
-<path d="M634.2,260 v-0.0 q0,-1.9 1.9,-1.9 h6.5 q1.9,0 1.9,1.9 v0.0z" fill="#04b83c" style="transform-origin:633.2px 260px;animation:gr .7s 0.38s both"><title>Dec 2025: 4</title></path>
-<line x1="645.5" y1="64" x2="645.5" y2="260" stroke="#1c2b20" stroke-dasharray="2 3"/><text x="649.5" y="276" class="t">2026</text><text x="649.5" y="290" class="s">371</text>
-<path d="M658.8,260 v-0.0 q0,-0.9 0.9,-0.9 h8.4 q0.9,0 0.9,0.9 v0.0z" fill="#04b83c" style="transform-origin:657.8px 260px;animation:gr .7s 0.39s both"><title>Feb 2026: 2</title></path>
-<path d="M671.0,260 v-0.0 q0,-0.9 0.9,-0.9 h8.4 q0.9,0 0.9,0.9 v0.0z" fill="#04b83c" style="transform-origin:670.0px 260px;animation:gr .7s 0.40s both"><title>Mar 2026: 2</title></path>
-<path d="M683.3,260 v-0.0 q0,-2.9 2.9,-2.9 h4.6 q2.9,0 2.9,2.9 v0.0z" fill="#04b83c" style="transform-origin:682.3px 260px;animation:gr .7s 0.41s both"><title>Apr 2026: 6</title></path>
-<path d="M695.6,260 v-20.3 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v20.3z" fill="#04b83c" style="transform-origin:694.6px 260px;animation:gr .7s 0.42s both"><title>May 2026: 49</title></path>
-<path d="M707.9,260 v-14.1 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v14.1z" fill="#04b83c" style="transform-origin:706.9px 260px;animation:gr .7s 0.42s both"><title>Jun 2026: 36</title></path>
-<path d="M720.2,260 v-11.7 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v11.7z" fill="#04b83c" style="transform-origin:719.2px 260px;animation:gr .7s 0.43s both"><title>Jul 2026: 31</title></path>
-<path d="M732.4,260 v-17.4 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v17.4z" fill="#04b83c" style="transform-origin:731.4px 260px;animation:gr .7s 0.44s both"><title>Aug 2026: 43</title></path>
-<path d="M744.7,260 v-93.0 q0,-3.0 3.0,-3.0 h4.3 q3.0,0 3.0,3.0 v93.0z" fill="#04b83c" style="transform-origin:743.7px 260px;animation:gr .7s 0.45s both"><title>Sep 2026: 202</title></path>
-<text x="160.4" y="107.6" class="b" text-anchor="middle">peak Sep 22 · 304</text>
-<text x="800" y="70" class="l">LANGUAGES</text>
-<text x="800" y="92" class="t">TypeScript</text><text x="976" y="92" class="s" text-anchor="end">40%</text><rect x="800" y="98" width="176" height="4" rx="2" fill="#1c2b20"/><rect x="800" y="98" width="71.2" height="4" rx="2" fill="#04b83c" style="transform-origin:800px 0;animation:gx 1s 0.3s both"/>
-<text x="800" y="122" class="t">JavaScript</text><text x="976" y="122" class="s" text-anchor="end">36%</text><rect x="800" y="128" width="176" height="4" rx="2" fill="#1c2b20"/><rect x="800" y="128" width="63.8" height="4" rx="2" fill="#04b83c" style="transform-origin:800px 0;animation:gx 1s 0.4s both"/>
-<text x="800" y="152" class="t">PHP</text><text x="976" y="152" class="s" text-anchor="end">14%</text><rect x="800" y="158" width="176" height="4" rx="2" fill="#1c2b20"/><rect x="800" y="158" width="25.2" height="4" rx="2" fill="#04b83c" style="transform-origin:800px 0;animation:gx 1s 0.5s both"/>
-<text x="800" y="182" class="t">Blade</text><text x="976" y="182" class="s" text-anchor="end">3%</text><rect x="800" y="188" width="176" height="4" rx="2" fill="#1c2b20"/><rect x="800" y="188" width="5.7" height="4" rx="2" fill="#04b83c" style="transform-origin:800px 0;animation:gx 1s 0.6s both"/>
-<text x="800" y="212" class="t">CSS</text><text x="976" y="212" class="s" text-anchor="end">3%</text><rect x="800" y="218" width="176" height="4" rx="2" fill="#1c2b20"/><rect x="800" y="218" width="5.6" height="4" rx="2" fill="#04b83c" style="transform-origin:800px 0;animation:gx 1s 0.7s both"/>
-<text x="800" y="242" class="t">Python</text><text x="976" y="242" class="s" text-anchor="end">3%</text><rect x="800" y="248" width="176" height="4" rx="2" fill="#1c2b20"/><rect x="800" y="248" width="4.5" height="4" rx="2" fill="#04b83c" style="transform-origin:800px 0;animation:gx 1s 0.8s both"/>
-<rect class="scan" width="1000" height="30" fill="#00ff41" fill-opacity=".025"/>
-<rect width="1000" height="320" rx="10" fill="url(#sl)"/>
+<rect x="24" y="58" width="660" height="232" rx="8" fill="#07100a" stroke="#1c2b20"/>
+<line x1="90.0" y1="58" x2="90.0" y2="290" stroke="#12301b" stroke-dasharray="1 3"/>
+<line x1="156.0" y1="58" x2="156.0" y2="290" stroke="#12301b" stroke-dasharray="1 3"/>
+<line x1="222.0" y1="58" x2="222.0" y2="290" stroke="#12301b" stroke-dasharray="1 3"/>
+<line x1="288.0" y1="58" x2="288.0" y2="290" stroke="#12301b" stroke-dasharray="1 3"/>
+<line x1="354.0" y1="58" x2="354.0" y2="290" stroke="#12301b" stroke-dasharray="1 3"/>
+<line x1="420.0" y1="58" x2="420.0" y2="290" stroke="#12301b" stroke-dasharray="1 3"/>
+<line x1="486.0" y1="58" x2="486.0" y2="290" stroke="#12301b" stroke-dasharray="1 3"/>
+<line x1="552.0" y1="58" x2="552.0" y2="290" stroke="#12301b" stroke-dasharray="1 3"/>
+<line x1="618.0" y1="58" x2="618.0" y2="290" stroke="#12301b" stroke-dasharray="1 3"/>
+<line x1="24" y1="87.0" x2="684" y2="87.0" stroke="#12301b" stroke-dasharray="1 3"/>
+<line x1="24" y1="116.0" x2="684" y2="116.0" stroke="#12301b" stroke-dasharray="1 3"/>
+<line x1="24" y1="145.0" x2="684" y2="145.0" stroke="#12301b" stroke-dasharray="1 3"/>
+<line x1="24" y1="174.0" x2="684" y2="174.0" stroke="#12301b" stroke-dasharray="1 3"/>
+<line x1="24" y1="203.0" x2="684" y2="203.0" stroke="#12301b" stroke-dasharray="1 3"/>
+<line x1="24" y1="232.0" x2="684" y2="232.0" stroke="#12301b" stroke-dasharray="1 3"/>
+<line x1="24" y1="261.0" x2="684" y2="261.0" stroke="#12301b" stroke-dasharray="1 3"/>
+<path d="M34.0,282.0 L36.6,282.0 L39.2,282.0 L41.8,282.0 L44.4,282.0 L47.0,282.0 L49.5,282.0 L52.1,282.0 L54.7,282.0 L57.3,282.0 L59.9,282.0 L62.5,280.8 L65.1,282.0 L67.7,282.0 L70.3,282.0 L72.9,267.4 L75.5,274.7 L78.0,275.9 L80.6,280.8 L83.2,282.0 L85.8,282.0 L88.4,275.9 L91.0,282.0 L93.6,246.7 L96.2,219.9 L98.8,275.9 L101.4,262.5 L104.0,282.0 L106.6,282.0 L109.1,252.8 L111.7,254.0 L114.3,232.0 L116.9,282.0 L119.5,279.6 L122.1,263.7 L124.7,254.0 L127.3,211.3 L129.9,169.9 L132.5,154.0 L135.1,184.5 L137.6,264.9 L140.2,247.9 L142.8,273.5 L145.4,258.8 L148.0,282.0 L150.6,274.7 L153.2,143.1 L155.8,127.2 L158.4,230.8 L161.0,152.8 L163.6,173.5 L166.1,260.1 L168.7,213.8 L171.3,274.7 L173.9,238.1 L176.5,246.7 L179.1,236.9 L181.7,262.5 L184.3,233.3 L186.9,266.2 L189.5,274.7 L192.1,271.0 L194.6,275.9 L197.2,243.0 L199.8,225.9 L202.4,261.3 L205.0,246.7 L207.6,260.1 L210.2,216.2 L212.8,219.9 L215.4,260.1 L218.0,282.0 L220.6,282.0 L223.1,247.9 L225.7,233.3 L228.3,233.3 L230.9,260.1 L233.5,257.6 L236.1,271.0 L238.7,272.3 L241.3,278.3 L243.9,255.2 L246.5,243.0 L249.1,252.8 L251.7,246.7 L254.2,272.3 L256.8,246.7 L259.4,260.1 L262.0,266.2 L264.6,262.5 L267.2,262.5 L269.8,271.0 L272.4,272.3 L275.0,266.2 L277.6,273.5 L280.2,282.0 L282.7,278.3 L285.3,282.0 L287.9,282.0 L290.5,282.0 L293.1,282.0 L295.7,260.1 L298.3,277.1 L300.9,282.0 L303.5,268.6 L306.1,261.3 L308.7,268.6 L311.2,272.3 L313.8,277.1 L316.4,279.6 L319.0,280.8 L321.6,282.0 L324.2,282.0 L326.8,282.0 L329.4,273.5 L332.0,282.0 L334.6,278.3 L337.2,263.7 L339.7,282.0 L342.3,280.8 L344.9,273.5 L347.5,277.1 L350.1,272.3 L352.7,260.1 L355.3,277.1 L357.9,279.6 L360.5,279.6 L363.1,278.3 L365.7,279.6 L368.3,271.0 L370.8,251.5 L373.4,245.4 L376.0,282.0 L378.6,282.0 L381.2,268.6 L383.8,274.7 L386.4,280.8 L389.0,278.3 L391.6,268.6 L394.2,279.6 L396.8,278.3 L399.3,282.0 L401.9,282.0 L404.5,282.0 L407.1,282.0 L409.7,282.0 L412.3,269.8 L414.9,185.7 L417.5,200.4 L420.1,274.7 L422.7,275.9 L425.3,274.7 L427.8,272.3 L430.4,188.2 L433.0,225.9 L435.6,251.5 L438.2,255.2 L440.8,269.8 L443.4,273.5 L446.0,205.2 L448.6,280.8 L451.2,282.0 L453.8,282.0 L456.3,282.0 L458.9,282.0 L461.5,282.0 L464.1,282.0 L466.7,261.3 L469.3,116.3 L471.9,102.9 L474.5,241.8 L477.1,261.3 L479.7,275.9 L482.3,267.4 L484.9,279.6 L487.4,273.5 L490.0,256.4 L492.6,280.8 L495.2,282.0 L497.8,282.0 L500.4,282.0 L503.0,279.6 L505.6,280.8 L508.2,278.3 L510.8,282.0 L513.4,279.6 L515.9,282.0 L518.5,278.3 L521.1,278.3 L523.7,274.7 L526.3,272.3 L528.9,256.4 L531.5,235.7 L534.1,146.7 L536.7,256.4 L539.3,222.3 L541.9,273.5 L544.4,272.3 L547.0,173.5 L549.6,204.0 L552.2,197.9 L554.8,267.4 L557.4,279.6 L560.0,223.5 L562.6,245.4 L565.2,207.7 L567.8,197.9 L570.4,258.8 L572.9,194.3 L575.5,273.5 L578.1,247.9 L580.7,272.3 L583.3,254.0 L585.9,222.3 L588.5,277.1 L591.1,279.6 L593.7,263.7 L596.3,274.7 L598.9,261.3 L601.4,282.0 L604.0,282.0 L606.6,267.4 L609.2,271.0 L611.8,272.3 L614.4,274.7 L617.0,282.0 L619.6,238.1 L622.2,255.2 L624.8,250.3 L627.4,271.0 L630.0,282.0 L632.5,260.1 L635.1,282.0 L637.7,280.8 L640.3,204.0 L642.9,275.9 L645.5,247.9 L648.1,239.3 L650.7,222.3 L653.3,229.6 L655.9,251.5 L658.5,264.9 L661.0,266.2 L663.6,217.4 L666.2,201.6 L668.8,225.9 L671.4,104.1 L674.0,212.5" fill="none" stroke="#00ff41" stroke-opacity=".16" stroke-width="1.5"/>
+<path id="tr" d="M34.0,282.0 L36.6,282.0 L39.2,282.0 L41.8,282.0 L44.4,282.0 L47.0,282.0 L49.5,282.0 L52.1,282.0 L54.7,282.0 L57.3,282.0 L59.9,282.0 L62.5,280.8 L65.1,282.0 L67.7,282.0 L70.3,282.0 L72.9,267.4 L75.5,274.7 L78.0,275.9 L80.6,280.8 L83.2,282.0 L85.8,282.0 L88.4,275.9 L91.0,282.0 L93.6,246.7 L96.2,219.9 L98.8,275.9 L101.4,262.5 L104.0,282.0 L106.6,282.0 L109.1,252.8 L111.7,254.0 L114.3,232.0 L116.9,282.0 L119.5,279.6 L122.1,263.7 L124.7,254.0 L127.3,211.3 L129.9,169.9 L132.5,154.0 L135.1,184.5 L137.6,264.9 L140.2,247.9 L142.8,273.5 L145.4,258.8 L148.0,282.0 L150.6,274.7 L153.2,143.1 L155.8,127.2 L158.4,230.8 L161.0,152.8 L163.6,173.5 L166.1,260.1 L168.7,213.8 L171.3,274.7 L173.9,238.1 L176.5,246.7 L179.1,236.9 L181.7,262.5 L184.3,233.3 L186.9,266.2 L189.5,274.7 L192.1,271.0 L194.6,275.9 L197.2,243.0 L199.8,225.9 L202.4,261.3 L205.0,246.7 L207.6,260.1 L210.2,216.2 L212.8,219.9 L215.4,260.1 L218.0,282.0 L220.6,282.0 L223.1,247.9 L225.7,233.3 L228.3,233.3 L230.9,260.1 L233.5,257.6 L236.1,271.0 L238.7,272.3 L241.3,278.3 L243.9,255.2 L246.5,243.0 L249.1,252.8 L251.7,246.7 L254.2,272.3 L256.8,246.7 L259.4,260.1 L262.0,266.2 L264.6,262.5 L267.2,262.5 L269.8,271.0 L272.4,272.3 L275.0,266.2 L277.6,273.5 L280.2,282.0 L282.7,278.3 L285.3,282.0 L287.9,282.0 L290.5,282.0 L293.1,282.0 L295.7,260.1 L298.3,277.1 L300.9,282.0 L303.5,268.6 L306.1,261.3 L308.7,268.6 L311.2,272.3 L313.8,277.1 L316.4,279.6 L319.0,280.8 L321.6,282.0 L324.2,282.0 L326.8,282.0 L329.4,273.5 L332.0,282.0 L334.6,278.3 L337.2,263.7 L339.7,282.0 L342.3,280.8 L344.9,273.5 L347.5,277.1 L350.1,272.3 L352.7,260.1 L355.3,277.1 L357.9,279.6 L360.5,279.6 L363.1,278.3 L365.7,279.6 L368.3,271.0 L370.8,251.5 L373.4,245.4 L376.0,282.0 L378.6,282.0 L381.2,268.6 L383.8,274.7 L386.4,280.8 L389.0,278.3 L391.6,268.6 L394.2,279.6 L396.8,278.3 L399.3,282.0 L401.9,282.0 L404.5,282.0 L407.1,282.0 L409.7,282.0 L412.3,269.8 L414.9,185.7 L417.5,200.4 L420.1,274.7 L422.7,275.9 L425.3,274.7 L427.8,272.3 L430.4,188.2 L433.0,225.9 L435.6,251.5 L438.2,255.2 L440.8,269.8 L443.4,273.5 L446.0,205.2 L448.6,280.8 L451.2,282.0 L453.8,282.0 L456.3,282.0 L458.9,282.0 L461.5,282.0 L464.1,282.0 L466.7,261.3 L469.3,116.3 L471.9,102.9 L474.5,241.8 L477.1,261.3 L479.7,275.9 L482.3,267.4 L484.9,279.6 L487.4,273.5 L490.0,256.4 L492.6,280.8 L495.2,282.0 L497.8,282.0 L500.4,282.0 L503.0,279.6 L505.6,280.8 L508.2,278.3 L510.8,282.0 L513.4,279.6 L515.9,282.0 L518.5,278.3 L521.1,278.3 L523.7,274.7 L526.3,272.3 L528.9,256.4 L531.5,235.7 L534.1,146.7 L536.7,256.4 L539.3,222.3 L541.9,273.5 L544.4,272.3 L547.0,173.5 L549.6,204.0 L552.2,197.9 L554.8,267.4 L557.4,279.6 L560.0,223.5 L562.6,245.4 L565.2,207.7 L567.8,197.9 L570.4,258.8 L572.9,194.3 L575.5,273.5 L578.1,247.9 L580.7,272.3 L583.3,254.0 L585.9,222.3 L588.5,277.1 L591.1,279.6 L593.7,263.7 L596.3,274.7 L598.9,261.3 L601.4,282.0 L604.0,282.0 L606.6,267.4 L609.2,271.0 L611.8,272.3 L614.4,274.7 L617.0,282.0 L619.6,238.1 L622.2,255.2 L624.8,250.3 L627.4,271.0 L630.0,282.0 L632.5,260.1 L635.1,282.0 L637.7,280.8 L640.3,204.0 L642.9,275.9 L645.5,247.9 L648.1,239.3 L650.7,222.3 L653.3,229.6 L655.9,251.5 L658.5,264.9 L661.0,266.2 L663.6,217.4 L666.2,201.6 L668.8,225.9 L671.4,104.1 L674.0,212.5" fill="none" stroke="#00ff41" stroke-width="1.8" stroke-linejoin="round" filter="url(#glow)" pathLength="1" style="stroke-dasharray:1;animation:sweep 7s linear infinite"/>
+<circle r="3.5" fill="#e6ffe9" filter="url(#glow)"><animateMotion dur="7s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;.8;1" calcMode="linear"><mpath href="#tr"/></animateMotion></circle>
+<line x1="168.7" y1="290" x2="168.7" y2="296" stroke="#9fb3a4"/><text x="171.7" y="308" class="s"><tspan fill="#9fb3a4">2023</tspan> 910</text>
+<line x1="303.5" y1="290" x2="303.5" y2="296" stroke="#9fb3a4"/><text x="306.5" y="308" class="s"><tspan fill="#9fb3a4">2024</tspan> 582</text>
+<line x1="440.8" y1="290" x2="440.8" y2="296" stroke="#9fb3a4"/><text x="443.8" y="308" class="s"><tspan fill="#9fb3a4">2025</tspan> 1,288</text>
+<line x1="575.5" y1="290" x2="575.5" y2="296" stroke="#9fb3a4"/><text x="578.5" y="308" class="s"><tspan fill="#9fb3a4">2026</tspan> 950</text>
+<text x="479.9" y="106.9" class="b">◂ peak 147/wk · Mar 2025</text>
+<text x="34" y="74" class="s"><tspan fill="#00ff41">CH1</tspan> contributions/week · 248 samples</text><text x="674" y="74" class="s" text-anchor="end">21/div · 25 wk/div</text>
+<text x="24" y="334" class="t"><tspan fill="#6e7d72">Vpp</tspan> <tspan fill="#e6ffe9">147</tspan></text>
+<text x="105.1" y="334" class="t"><tspan fill="#6e7d72">Vavg</tspan> <tspan fill="#e6ffe9">19.9</tspan></text>
+<text x="200.8" y="334" class="t"><tspan fill="#6e7d72">duty</tspan> <tspan fill="#e6ffe9">77%</tspan></text>
+<text x="289.20000000000005" y="334" class="t"><tspan fill="#6e7d72">burst period</tspan> <tspan fill="#e6ffe9">none dominant</tspan></text>
+<text x="24" y="352" class="s">duty = weeks with any activity · burst period = strongest repeating rhythm (autocorrelation)</text>
+<defs><linearGradient id="sw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#00ff41" stop-opacity=".35"/><stop offset="1" stop-color="#00ff41" stop-opacity="0"/></linearGradient></defs>
+<circle cx="846" cy="168" r="31.7" fill="none" stroke="#12301b"/>
+<circle cx="846" cy="168" r="63.4" fill="none" stroke="#12301b"/>
+<circle cx="846" cy="168" r="96.0" fill="none" stroke="#12301b"/>
+<line x1="846" y1="168" x2="846.0" y2="72.0" stroke="#12301b"/>
+<text x="846.0" y="59.0" class="s" text-anchor="middle">sun</text>
+<line x1="846" y1="168" x2="921.1" y2="108.1" stroke="#12301b"/>
+<text x="934.3" y="101.5" class="s" text-anchor="middle">mon</text>
+<line x1="846" y1="168" x2="939.6" y2="189.4" stroke="#12301b"/>
+<text x="956.2" y="197.1" class="s" text-anchor="middle" fill="#e6ffe9" font-weight="700">tue</text>
+<line x1="846" y1="168" x2="887.7" y2="254.5" stroke="#12301b"/>
+<text x="895.0" y="273.8" class="s" text-anchor="middle">wed</text>
+<line x1="846" y1="168" x2="804.3" y2="254.5" stroke="#12301b"/>
+<text x="797.0" y="273.8" class="s" text-anchor="middle">thu</text>
+<line x1="846" y1="168" x2="752.4" y2="189.4" stroke="#12301b"/>
+<text x="735.8" y="197.1" class="s" text-anchor="middle">fri</text>
+<line x1="846" y1="168" x2="770.9" y2="108.1" stroke="#12301b"/>
+<text x="757.7" y="101.5" class="s" text-anchor="middle">sat</text>
+<polygon points="846.0,97.8 904.6,121.3 939.6,189.4 882.5,243.8 815.4,231.5 770.8,185.2 777.3,113.2" fill="#00ff41" fill-opacity=".14" stroke="#00ff41" stroke-width="1.8" stroke-linejoin="round" filter="url(#glow)"/>
+<circle cx="846.0" cy="97.8" r="3" fill="#00ff41" style="animation:ping 4s 0.00s infinite"/>
+<circle cx="904.6" cy="121.3" r="3" fill="#00ff41" style="animation:ping 4s 0.57s infinite"/>
+<circle cx="939.6" cy="189.4" r="3" fill="#00ff41" style="animation:ping 4s 1.14s infinite"/>
+<circle cx="882.5" cy="243.8" r="3" fill="#00ff41" style="animation:ping 4s 1.71s infinite"/>
+<circle cx="815.4" cy="231.5" r="3" fill="#00ff41" style="animation:ping 4s 2.29s infinite"/>
+<circle cx="770.8" cy="185.2" r="3" fill="#00ff41" style="animation:ping 4s 2.86s infinite"/>
+<circle cx="777.3" cy="113.2" r="3" fill="#00ff41" style="animation:ping 4s 3.43s infinite"/>
+<g style="transform-origin:846px 168px;animation:spin 4s linear infinite"><path d="M846,168 L846,72 A96,96 0 0,1 907.7,94.5 Z" fill="url(#sw)"/><line x1="846" y1="168" x2="846" y2="72" stroke="#00ff41" stroke-width="1.5" filter="url(#glow)"/></g>
+<text x="846" y="334" class="t" text-anchor="middle"><tspan fill="#6e7d72">SONAR</tspan> peak day <tspan fill="#e6ffe9">tue</tspan> · 17% of last year</text>
+</g>
+<rect width="1000" height="368" rx="10" fill="url(#sl)"/>
 </svg>
