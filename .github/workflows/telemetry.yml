@@ -1,0 +1,34 @@
+name: telemetry
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"   # every 6 hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-writes
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch contribution data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TELEMETRY_TOKEN: ${{ secrets.TELEMETRY_TOKEN }}   # optional PAT (read:user) to include private contributions
+        run: python3 .github/telemetry/fetch.py
+      - name: Render charts
+        run: python3 .github/telemetry/render.py
+      - name: Commit
+        run: |
+          git config user.name  "void-telemetry"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/telemetry .github/telemetry/data.json
+          git diff --cached --quiet && exit 0
+          git commit -m "telemetry: $(date -u +%F)"
+          git pull --rebase --quiet && git push

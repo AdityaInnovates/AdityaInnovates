@@ -92,10 +92,13 @@ $ cat /var/log/hall_of_shadows
 
 ## `// telemetry`
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=AdityaInnovates&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=050807&title_color=00FF41&text_color=c9d1d9&icon_color=00FF41" />
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=AdityaInnovates&layout=compact&hide_border=true&bg_color=050807&title_color=00FF41&text_color=c9d1d9" />
+<img src="./assets/telemetry/overview.svg" width="100%" alt="contribution telemetry" />
 
-<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=AdityaInnovates&bg_color=050807&color=00FF41&line=00FF41&point=c9d1d9&area=true&area_color=00FF41&hide_border=true" />
+<img src="./assets/telemetry/history.svg" width="100%" alt="contribution history" />
+
+<img src="./assets/telemetry/forecast.svg" width="100%" alt="contribution forecast" />
+
+<sub>self-hosted · rebuilt every 6h by a GitHub Action · forecast is a back-tested statistical model, not a promise</sub>
 
 <img src="./assets/divider.svg" width="100%" />
 

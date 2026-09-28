@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="372" viewBox="0 0 1000 372" role="img" aria-label="// FORECAST">
+<title>// FORECAST</title>
+<style>
+text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;}
+.h{font-size:12px;letter-spacing:2px;fill:#6e7d72} .s{font-size:11px;fill:#6e7d72}
+.v{font-size:24px;font-weight:700;fill:#e6ffe9} .l{font-size:10px;letter-spacing:1.5px;fill:#6e7d72}
+.t{font-size:11px;fill:#9fb3a4} .b{font-size:12px;fill:#e6ffe9}
+.cur{animation:bk 1s steps(1) infinite} @keyframes bk{50%{opacity:0}}
+.scan{animation:sc 6s linear infinite} @keyframes sc{from{transform:translateY(-30px)}to{transform:translateY(372px)}}
+@keyframes fi{from{opacity:0}to{opacity:1}}@keyframes dr{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+</style>
+<defs><pattern id="sl" width="3" height="3" patternUnits="userSpaceOnUse"><rect width="3" height="1" fill="#000" fill-opacity=".35"/></pattern></defs>
+<rect width="1000" height="372" rx="10" fill="#050807" stroke="#00ff41" stroke-opacity=".25"/>
+<text x="24" y="30" class="h">// FORECAST<tspan class="cur" fill="#00ff41"> _</tspan></text>
+<text x="976" y="30" class="s" text-anchor="end">statistical model · not a promise</text>
+<line x1="24" y1="42" x2="976" y2="42" stroke="#1c2b20"/>
+<line x1="56" y1="270" x2="656" y2="270" stroke="#1c2b20"/><text x="48" y="274" class="s" text-anchor="end">0</text>
+<line x1="56" y1="170.0" x2="656" y2="170.0" stroke="#1c2b20"/><text x="48" y="174.0" class="s" text-anchor="end">158</text>
+<line x1="56" y1="70" x2="656" y2="70" stroke="#1c2b20"/><text x="48" y="74" class="s" text-anchor="end">315</text>
+<rect x="514.8235294117646" y="70" width="141.17647058823536" height="200" fill="#e346c9" fill-opacity=".04"/><line x1="514.8235294117646" y1="62" x2="514.8235294117646" y2="270" stroke="#9fb3a4" stroke-dasharray="3 3"/><text x="520.8235294117646" y="60" class="s">now → forecast</text>
+<path d="M56.0,270 L56.0,224.3 L67.8,265.6 L79.5,252.2 L91.3,264.9 L103.1,255.4 L114.8,238.9 L126.6,267.5 L138.4,268.7 L150.1,260.5 L161.9,266.2 L173.6,259.2 L185.4,270.0 L197.2,270.0 L208.9,262.4 L220.7,264.3 L232.5,264.9 L244.2,266.2 L256.0,270.0 L267.8,247.2 L279.5,256.0 L291.3,253.5 L303.1,264.3 L314.8,270.0 L326.6,258.6 L338.4,270.0 L350.1,269.4 L361.9,229.4 L373.6,266.8 L385.4,252.2 L397.2,247.8 L408.9,238.9 L420.7,242.7 L432.5,254.1 L444.2,261.1 L456.0,261.8 L467.8,236.4 L479.5,228.1 L491.3,240.8 L503.1,177.4 L514.8,234.5 L514.8235294117646,270Z" fill="#00ff41" fill-opacity=".08"/>
+<path d="M56.0,224.3 L67.8,265.6 L79.5,252.2 L91.3,264.9 L103.1,255.4 L114.8,238.9 L126.6,267.5 L138.4,268.7 L150.1,260.5 L161.9,266.2 L173.6,259.2 L185.4,270.0 L197.2,270.0 L208.9,262.4 L220.7,264.3 L232.5,264.9 L244.2,266.2 L256.0,270.0 L267.8,247.2 L279.5,256.0 L291.3,253.5 L303.1,264.3 L314.8,270.0 L326.6,258.6 L338.4,270.0 L350.1,269.4 L361.9,229.4 L373.6,266.8 L385.4,252.2 L397.2,247.8 L408.9,238.9 L420.7,242.7 L432.5,254.1 L444.2,261.1 L456.0,261.8 L467.8,236.4 L479.5,228.1 L491.3,240.8 L503.1,177.4 L514.8,234.5" fill="none" stroke="#00ff41" stroke-width="2" stroke-linejoin="round" pathLength="1" style="stroke-dasharray:1;animation:dr 2.2s ease-out both"/>
+<path d="M514.8,234.5 L526.6,169.0 L538.4,162.0 L550.1,154.6 L561.9,147.8 L573.6,144.9 L585.4,131.3 L597.2,128.2 L608.9,122.5 L620.7,113.7 L632.5,104.4 L644.2,100.9 L656.0,88.2 L656.0,267.0 L644.2,265.9 L632.5,265.5 L620.7,265.0 L608.9,264.2 L597.2,262.7 L585.4,261.5 L573.6,260.6 L561.9,258.7 L550.1,256.1 L538.4,254.9 L526.6,254.5 L514.8,234.5Z" fill="#e346c9" fill-opacity=".16" style="animation:fi 1s 2s both"/>
+<path d="M514.8,234.5 L526.6,225.1 L538.4,224.1 L550.1,223.1 L561.9,221.2 L573.6,222.5 L585.4,221.7 L597.2,218.9 L608.9,218.4 L620.7,217.9 L632.5,218.2 L644.2,218.4 L656.0,215.0" fill="none" stroke="#e346c9" stroke-width="2" stroke-dasharray="6 4" style="animation:fi .8s 2.2s both"/>
+<circle cx="514.8235294117646" cy="234.46738264646166" r="4" fill="#00ff41" stroke="#050807" stroke-width="2"/>
+<text x="79.52941176470588" y="288" class="t"><tspan fill="#00ff41">━</tspan> actual (weekly)</text><text x="538.3529411764706" y="288" class="t"><tspan fill="#e346c9">╌</tspan> median  <tspan fill="#e346c9" fill-opacity=".5">█</tspan> 80% band</text>
+<text x="56" y="310" class="s">last 40 weeks · next 12 weeks</text>
+<g style="animation:fi .5s 2.40s both"><text x="700" y="76" class="l">NEXT 30 DAYS</text><text x="700" y="102" class="v">336</text><text x="700" y="118" class="s">80%: 144–671</text></g>
+<g style="animation:fi .5s 2.65s both"><text x="700" y="142" class="l">2026 PROJECTED</text><text x="700" y="168" class="v">2,122</text><text x="700" y="184" class="s">80%: 1,329–3,675</text></g>
+<g style="animation:fi .5s 2.90s both"><text x="700" y="208" class="l">BEATS 2025 (1,288)</text><text x="700" y="234" class="v">92%</text><text x="700" y="250" class="s">probability, 3,000 simulations</text></g>
+<g style="animation:fi .5s 3.15s both"><text x="700" y="274" class="l">MOMENTUM · 8W vs PRIOR 8W</text><text x="700" y="300" class="v">+86%</text><text x="700" y="316" class="s">busiest day lately: fri</text></g>
+<text x="24" y="356" class="s">model: damped Holt on √counts (α=0.5 β=0.01 φ=0.8) + bootstrap residuals · backtest 8w: MAE 27.7/wk vs naive 28.6 · 8/8 inside band</text>
+<rect class="scan" width="1000" height="30" fill="#00ff41" fill-opacity=".025"/>
+<rect width="1000" height="372" rx="10" fill="url(#sl)"/>
+</svg>
