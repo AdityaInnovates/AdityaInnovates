@@ -1,13 +1,6 @@
 {
- "sessions": 6,
+ "sessions": 7,
  "history": [
-  {
-   "who": "ghost_2a87",
-   "cmd": "decrypt ********",
-   "out": [
-    "proof rejected. try harder."
-   ]
-  },
   {
    "who": "ghost_18bc",
    "cmd": "decrypt ********",
@@ -30,6 +23,13 @@
    "out": [
     "scriptrm/script: command not found. try 'help'"
    ]
+  },
+  {
+   "who": "ghost_709c",
+   "cmd": "cat intercepted.bin",
+   "out": [
+    "NzM3OTZlNzQ3YjY1MzE2MTc0NWYzMDVmMzE2NjVmNmE3\u2026"
+   ]
   }
  ],
  "solvers": [
@@ -41,6 +41,7 @@
  "ghosts": [
   "ghost_18bc",
   "ghost_2a87",
-  "ghost_bbec"
+  "ghost_bbec",
+  "ghost_709c"
  ]
 }
