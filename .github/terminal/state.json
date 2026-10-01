@@ -1,14 +1,6 @@
 {
- "sessions": 7,
+ "sessions": 8,
  "history": [
-  {
-   "who": "ghost_18bc",
-   "cmd": "decrypt ********",
-   "out": [
-    "proof verified. root obtained.",
-    "ghost_18bc joins the hall of shadows (#1)."
-   ]
-  },
   {
    "who": "ghost_18bc",
    "cmd": "cat .secret",
@@ -30,6 +22,14 @@
    "out": [
     "NzM3OTZlNzQ3YjY1MzE2MTc0NWYzMDVmMzE2NjVmNmE3\u2026"
    ]
+  },
+  {
+   "who": "ghost_f8ae",
+   "cmd": "whoami",
+   "out": [
+    "ghost_f8ae",
+    "you are no one here. that's a compliment."
+   ]
   }
  ],
  "solvers": [
@@ -42,6 +42,7 @@
   "ghost_18bc",
   "ghost_2a87",
   "ghost_bbec",
-  "ghost_709c"
+  "ghost_709c",
+  "ghost_f8ae"
  ]
 }
